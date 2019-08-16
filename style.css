@@ -468,7 +468,7 @@ img{
 /* Carousel End */
 
 /* Adaptive Design */
-@media screen and (max-width: 665px){
+@media screen and (max-width: 950px){
   .Content{
     margin-top: 10%;
     line-height: 140%;
