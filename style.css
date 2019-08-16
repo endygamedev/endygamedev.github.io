@@ -243,6 +243,7 @@ img{
   position: relative;
   width: 100%;
   overflow: hidden;
+  border: 4px groove #08fdfa;
 }
 .carousel-inner > .item {
   position: relative;
