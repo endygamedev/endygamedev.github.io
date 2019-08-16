@@ -488,7 +488,9 @@ img{
   }
 
   #indicators{
-    top: 10%;
+    margin-bottom: 10%;
+    width: 15px;
+    height: 15px;
   }
 
   #contacts{
