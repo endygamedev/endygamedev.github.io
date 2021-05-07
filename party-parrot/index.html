@@ -7,13 +7,145 @@
 <table width=100% height=95%> 
     <tr>
         <td class="height" style="text-align: center; vertical-align: middle;">
-            <img src="example.gif" height=300 style="margin: 1%; border: 5px solid #ff00ff"/>
-            <img src="example_ascii.gif" height=300 style="margin: 1%; border: 5px solid #ff00ff"/>
-            <h1 style="font-family: 'Cutive Mono', monospace;"><img src="60fpsparrot.gif" height=50/> github: @endygamedev/<a href="https://github.com/endygamedev/party-parrot" target="_blank" style="text-decoration: none; color: #ff00ff;">party-parrot</a></h1>
-            <h2 style="font-family: 'Cutive Mono', monospace;"> «Your own Party Parrot for terminal» </h2>
-            <p style="font-family: 'Cutive Mono', monospace;"> More parrots <a href="https://cultofthepartyparrot.com/" target="_blank" style="text-decoration: none; color: #ff00ff;">HERE</a> </p>
+            <img class="image" src="./assets/example_1.gif" height=300/>
+            <img class="image" src="./assets/example_3.gif" height=300/>
+            <h1 class="typewriter"><img src="./assets/parrot.gif" height=50/> github: @endygamedev/<a href="https://github.com/endygamedev/party-parrot" target="_blank">party-parrot</a></h1>
+            <h2>«Your own Party Parrot for terminal»</h2>
+            <p>More parrots <a href="https://cultofthepartyparrot.com/" target="_blank">HERE</a></p>
         </td>
     </tr>
 </table>
 
-<p style="font-family: 'Cutive Mono', monospace; text-align: center; font-size: small"> © endygamedev | fork of <a href="https://github.com/jmhobbs/terminal-parrot.git" target="_blank" style="text-decoration: none; color: #ff00ff">THIS</a> project <p>
+<p class="footer"> © endygamedev | fork of <a href="https://github.com/jmhobbs/terminal-parrot.git" target="_blank">THIS</a> project</p>
+
+<table width=100% height=100%> 
+    <tr>
+        <td class="height">
+            <div class="content">
+                <h1 class="header">README</h1>
+                <p align="right">
+                <a href="https://github.com/endygamedev/party-parrot/actions/workflows/main.yml" target="_blank">
+                    <img src="https://github.com/endygamedev/party-parrot/actions/workflows/main.yml/badge.svg?branch=main">
+                </a>
+                <img src="https://img.shields.io/badge/platform-linux%20%7C%20macos-lightgrey">
+                </p>
+
+                <details open>
+                <summary><img src="./assets/parrot.gif" alt="parrot" width="25"/> Table of content</summary>
+                <ol>
+                    <li><a href="#why">Why do you need to install this?</a></li>
+                    <li><a href="#install">Install</a></li>
+                    <li><a href="#uninstall">Uninstall</a></li>
+                    <li><a href="#update">Update</a></li>    
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#fork">Is this fork?</a></li>
+                    <li><a href="#license">License</a></li>
+                </ol>
+                </details>
+
+                <a id="why">
+                    <h2>Why do you need to install this?</h2>
+                </a>
+                <h3> — Next question </h3>
+
+                <a id="install">
+                    <h2>Install</h2>
+                </a>
+                <h3>Make</h3>
+                <pre>
+$ git clone https://github.com/endygamedev/party-parrot.git
+$ cd party-parrot
+$ sudo make install</pre>
+
+                <a id="uninstall">
+                    <h2>Uninstall</h2>
+                </a>
+                <h3> Make </h3>
+
+<pre>
+$ sudo make uninstall
+</pre>
+
+                <a id="update">
+                    <h2>Update</h2>
+                </a>
+                <h3> Make </h3>
+
+<pre>
+$ sudo make update
+</pre>
+
+                <a id="usage">
+                    <h2>Usage</h2>
+                </a>
+
+<pre>
+$ parrot
+</pre>
+
+                <p align="center">
+                    <img class="image" src="./assets/example_1.gif" alt="example_1" width="800"/>
+                </p>
+                <p align="center">
+                    <span>enjoy <img src="./assets/parrot.gif" alt="parrot" width="20"/></span>
+                </p>
+
+                If you need to stop this just type: <code>q + &lt;Enter&gt;</code> or <code> Ctrl + C</code>
+
+                <h3>Keys</h3>
+                <h4>Change encoded image</h4>
+
+<pre>
+$ parrot -c ascii
+</pre>
+
+                <p align="center">
+                    <img class="image" src="./assets/example_2.gif" alt="example_2" width="800"/>
+                </p>
+                <p align="center">
+                    <span>enjoy <img src="./assets/parrot.gif" alt="parrot" width="20"/></span>
+                </p>
+
+                <h4>Change speed</h4>
+
+<pre>
+$ parrot -s 120000
+</pre>
+
+                <p align="center">
+                    <img class="image" src="./assets/example_3.gif" alt="example_3" width="800"/>
+                </p>
+                <p align="center">
+                    <span> enjoy <img src="./assets/parrot.gif" alt="parrot" width="20"/></span>
+                </p>
+
+                And also you can combine this two keys
+
+                <a id="fork">
+                    <h2>Is this fork?</h2>
+                </a>
+                
+                <h4> — Yes, I took the idea <a href="https://github.com/jmhobbs/terminal-parrot" target="_blank">here</a> and implemented it on C. </h4>
+
+                <a id="license">
+                    <h2>License</h2>
+                </a>
+
+                <code>party-parrot</code> is made available under the terms of either the MIT License.
+                See the <a href="https://github.com/endygamedev/party-parrot/blob/main/LICENSE" target="_blank">LICENSE</a> files for license details.
+
+                <p style="margin-top: 2%;">
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+                        <img alt="License Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/>
+                    </a>
+                </p>
+
+                <p style="text-align: center; margin: 5% 0 2% 0; font-weight: bold;">
+                    <a href="#">🔼 Back to top 🔼</a>
+                </p>
+
+                <p class="footer"> © endygamedev | fork of <a href="https://github.com/jmhobbs/terminal-parrot.git" target="_blank">THIS</a> project</p>
+            </div>
+        </td>
+    </tr>
+</table>
