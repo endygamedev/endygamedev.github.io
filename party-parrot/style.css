@@ -1,25 +1,16 @@
 h1 {
-  border-right: solid 3px rgba(0,255,0,.75);
-  white-space: nowrap;
-  overflow: hidden;
+white-space: nowrap;
+overflow: hidden;
 }
-
 
 /* Animation */
 h1 {
-  animation: animated-text 7s steps(40,end) 1s 1 normal both,
-             animated-cursor 600ms steps(40,end) infinite;
+animation: animated-text 6s linear 1s 1 normal both;
 }
 
-/* Text animation */
+/* text animation */
+
 @keyframes animated-text{
-  from{width: 0;}
-  to{width: 100%;}
-}
-
-/* cursor animations */
-
-@keyframes animated-cursor{
-  from{border-right-color: rgba(0, 255, 0, .85);}
-  to{border-right-color: transparent;}
+from{width: 0;}
+to{width: 100%;}
 }
