@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-21T16:47:34+03:00</updated><id>/feed.xml</id><title type="html">Egor Bronnikov</title><entry><title type="html">🎤 Top 5 albums of all time</title><link href="/jekyll/update/2021/08/21/top5-albums.html" rel="alternate" type="text/html" title="🎤 Top 5 albums of all time" /><published>2021-08-21T16:25:15+03:00</published><updated>2021-08-21T16:25:15+03:00</updated><id>/jekyll/update/2021/08/21/top5-albums</id><content type="html" xml:base="/jekyll/update/2021/08/21/top5-albums.html">&lt;div align=&quot;justify&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-08-25T15:48:22+03:00</updated><id>/feed.xml</id><title type="html">Egor Bronnikov</title><entry><title type="html">🇦 Увеличить директорию / за счёт /home</title><link href="/jekyll/update/2021/08/25/disk-size.html" rel="alternate" type="text/html" title="🇦 Увеличить директорию / за счёт /home" /><published>2021-08-25T14:00:15+03:00</published><updated>2021-08-25T14:00:15+03:00</updated><id>/jekyll/update/2021/08/25/disk-size</id><content type="html" xml:base="/jekyll/update/2021/08/25/disk-size.html">&lt;div align=&quot;justify&quot;&gt;
+
+&lt;h2&gt;Вступление&lt;/h2&gt;
+&lt;p&gt;Так получилось что я немного не рассчитал размер корневой директории и разбил свой 512Gb диск следующим образом:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Раздел&lt;/th&gt;
+    &lt;th&gt;Размер&lt;/th&gt;
+    &lt;th&gt;Файловая система&lt;/th&gt;
+    &lt;th&gt;Назначение&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;&lt;i&gt;/dev/sda1&lt;/i&gt;&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;1Gb&lt;/td&gt;
+    &lt;td&gt;fat32&lt;/td&gt;
+    &lt;td&gt;swap&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;&lt;i&gt;/dev/sda2&lt;/i&gt;&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;25Gb&lt;/td&gt;
+    &lt;td&gt;ext4&lt;/td&gt;
+    &lt;td&gt;/&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;&lt;i&gt;/dev/sda3&lt;/i&gt;&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;486Gb&lt;/td&gt;
+    &lt;td&gt;ext4&lt;/td&gt;
+    &lt;td&gt;/home&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h4&gt;Трёп и нудятина&lt;/h4&gt;
+
+&lt;p&gt;Со временем, после установки ОС и софта, у меня осталось ~5Gb и это немного напрягало, поэтому мне пришлось столкнуться с проблемой расширения корневой директории за счёт &lt;code&gt;&lt;i&gt;/home&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Я почитал много топиков на эту тему и все писали о том, что это сложная задача, потому что редачить разделы на лету не получится, что логично, потому что мы как бы работаем в этот момент на них. Это всё равно что проводить тяжёлую операцию без наркоза, велики шансы что человек не выдержит и с диском тоже самое.&lt;/p&gt; 
+
+&lt;p&gt;Также многие писали о том, что не стоит использовать GParted и сторонние утилиты, потому что они могут поломать данные, которые находятся в разделах. Люди предлагали &lt;a href=&quot;https://pingtool.org/online-resize-lvm-partitions-shrink-home-extend-root/&quot; target=&quot;blank_&quot;&gt;работать через LVM&lt;/a&gt;. ОК. Но тем не менее были и те, &lt;a href=&quot;https://archlinux.org.ru/forum/topic/17967/?page=1&quot; target=&quot;blank_&quot;&gt;кто писал&lt;/a&gt;, что уже 1000 дисков изменили через GParted и бахнуть не должно.&lt;/p&gt;
+
+&lt;p&gt;После всех прочитанных советов и просмотренных видосов на YouTube я рискнул всё-таки работать через GParted.&lt;/p&gt;
+
+&lt;h3&gt;Шаги успешного человека&lt;/h3&gt;
+&lt;ol&gt;
+    &lt;li&gt;⚠️ &lt;u&gt;Сделать полный backup&lt;/u&gt; всего и вся, потому что есть шансы, что это затея может закончиться плохо, а данные сохранить хочется;&lt;/li&gt;
+    &lt;li&gt;Скачать любую Live-CD систему;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;https://gparted.org/livecd.php&quot; target=&quot;blank_&quot;&gt;GParted Live;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;https://ubuntu.com/download/desktop&quot; target=&quot;blank_&quot;&gt;Ubuntu;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+        Я работал с Ubuntu, потому что у меня уже была загрузочная флешка.
+    &lt;/li&gt;
+    &lt;li&gt;Делаем загрузочную флешку с Live-CD образа;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;https://www.balena.io/etcher/&quot; target=&quot;blank_&quot;&gt;Etcher;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;https://rufus.ie/en/&quot; target=&quot;blank_&quot;&gt;Rufus;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Втыкаем флешку в ПК/ноут, заходим в BIOS и изменяем &lt;code&gt;&lt;i&gt;Bootable Device&lt;/i&gt;&lt;/code&gt; на флешку;&lt;br /&gt;
+    Для каждого устройства этот шаг индивидуален.&lt;/li&gt;
+    &lt;li&gt;Подрубаем GParted и теперь в зависимоти от расположения разделов нужно отрезать (&lt;code&gt;&lt;i&gt;Resize/Move&lt;/i&gt;&lt;/code&gt;) нужное количество от &lt;code&gt;&lt;i&gt;/home&lt;/i&gt;&lt;/code&gt;;&lt;br /&gt;
+    В моём случае я должен отрезать 80Gb спереди, таким образом мы получили &lt;code&gt;&lt;i&gt;unallocated&lt;/i&gt;&lt;/code&gt; пространство.&lt;/li&gt;
+    &lt;li&gt;Теперь выбираем раздел &lt;code&gt;&lt;i&gt;/&lt;/i&gt;&lt;/code&gt;, опять делаем &lt;code&gt;&lt;i&gt;Resize/Move&lt;/i&gt;&lt;/code&gt; и добавляем то &lt;code&gt;&lt;i&gt;unallocated&lt;/i&gt;&lt;/code&gt; пространство, которое получили из предыдущего шага;&lt;/li&gt;
+    &lt;li&gt;После чего нажимаем &lt;code&gt;&lt;i&gt;Apply All Operations&lt;/i&gt;&lt;/code&gt; и ждём пока всё сработает;&lt;/li&gt;
+    &lt;li&gt;Перезапускаем устройство и вытаскиваем флешку;&lt;/li&gt;
+    &lt;li&gt;Успех!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Заключение&lt;/h2&gt;
+&lt;p&gt;Таким образом мы получили новую разметку приэтом не потеряв данные:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Раздел&lt;/th&gt;
+    &lt;th&gt;Размер&lt;/th&gt;
+    &lt;th&gt;Файловая система&lt;/th&gt;
+    &lt;th&gt;Назначение&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;&lt;i&gt;/dev/sda1&lt;/i&gt;&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;1Gb&lt;/td&gt;
+    &lt;td&gt;fat32&lt;/td&gt;
+    &lt;td&gt;swap&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;&lt;i&gt;/dev/sda2&lt;/i&gt;&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;105Gb&lt;/td&gt;
+    &lt;td&gt;ext4&lt;/td&gt;
+    &lt;td&gt;/&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;&lt;i&gt;/dev/sda3&lt;/i&gt;&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;406Gb&lt;/td&gt;
+    &lt;td&gt;ext4&lt;/td&gt;
+    &lt;td&gt;/home&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+&lt;h2 align=&quot;center&quot;&gt;✌️ &lt;sup&gt;т а к и е д е л а&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;/div&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"></summary></entry><entry><title type="html">🎤 Top 5 albums of all time</title><link href="/jekyll/update/2021/08/21/top5-albums.html" rel="alternate" type="text/html" title="🎤 Top 5 albums of all time" /><published>2021-08-21T16:25:15+03:00</published><updated>2021-08-21T16:25:15+03:00</updated><id>/jekyll/update/2021/08/21/top5-albums</id><content type="html" xml:base="/jekyll/update/2021/08/21/top5-albums.html">&lt;div align=&quot;justify&quot;&gt;
 &lt;p&gt;Если бы разрешили оставить только 5 альбомов, а всю остальную музыку стереть, то это было бы оно:&lt;/p&gt;
 
 
