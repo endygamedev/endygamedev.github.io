@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="💻 How monads work?" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"💻 How monads work?","dateModified":"2021-10-24T14:30:00+03:00","datePublished":"2021-10-24T14:30:00+03:00","description":"In this article we will see with an example what monad is.","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll/update/2021/10/24/monads.html"},"url":"/jekyll/update/2021/10/24/monads.html","@context":"https://schema.org"}</script>
+{"headline":"💻 How monads work?","dateModified":"2021-10-24T14:30:00+03:00","datePublished":"2021-10-24T14:30:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll/update/2021/10/24/monads.html"},"url":"/jekyll/update/2021/10/24/monads.html","@type":"BlogPosting","description":"In this article we will see with an example what monad is.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Egor Bronnikov" /><link rel="shortcut icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,7 +68,7 @@
 <p><code class="language-plaintext highlighter-rouge">(a -&gt; m b)</code> — Kleisli arrow.</p>
 
 <h2 id="example">Example</h2>
-<h3 id="arrow-kleisli">Arrow Kleisli</h3>
+<h3 id="kleisli-arrow">Kleisli arrow</h3>
 <p>Okay, let’s now see an example of how bind works, because it is the main operator in the Monad class.
 <i>All code is <a href="https://github.com/endygamedev/learn-haskell/blob/main/src/MonadExample.hs" target="blank_">here</a>.</i></p>
 
@@ -76,7 +76,7 @@
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arrowf</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Enum</span> <span class="n">a</span><span class="p">,</span> <span class="kt">Show</span> <span class="n">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">String</span>
 <span class="n">arrowf</span> <span class="n">x</span> <span class="o">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">show</span> <span class="o">$</span> <span class="n">succ</span> <span class="n">x</span><span class="p">)</span>
 </code></pre></div></div>
-<p>If we look at the type of this function, it will look like this: <code class="language-plaintext highlighter-rouge">(Enum a, Show a) =&gt; a -&gt; Maybe String</code>. Now take another look at the type of the <code class="language-plaintext highlighter-rouge">(&gt;&gt;=)</code> function: <code class="language-plaintext highlighter-rouge">m a -&gt; (a -&gt; m b) -&gt; m b</code>. If we remove that a is a representative of the <code class="language-plaintext highlighter-rouge">Enum</code> and <code class="language-plaintext highlighter-rouge">Show</code> classes, then it turns out that we have written a specific example of a Kleisley arrow: <code class="language-plaintext highlighter-rouge">(a -&gt; m b)</code>, where <code class="language-plaintext highlighter-rouge">m = Maybe</code> and <code class="language-plaintext highlighter-rouge">b = String</code>.</p>
+<p>If we look at the type of this function, it will look like this: <code class="language-plaintext highlighter-rouge">(Enum a, Show a) =&gt; a -&gt; Maybe String</code>. Now take another look at the type of the <code class="language-plaintext highlighter-rouge">(&gt;&gt;=)</code> function: <code class="language-plaintext highlighter-rouge">m a -&gt; (a -&gt; m b) -&gt; m b</code>. If we remove that a is a representative of the <code class="language-plaintext highlighter-rouge">Enum</code> and <code class="language-plaintext highlighter-rouge">Show</code> classes, then it turns out that we have written a specific example of a Kleisli arrow: <code class="language-plaintext highlighter-rouge">(a -&gt; m b)</code>, where <code class="language-plaintext highlighter-rouge">m = Maybe</code> and <code class="language-plaintext highlighter-rouge">b = String</code>.</p>
 
 <p>Usage example:</p>
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">MonadExample</span><span class="o">&gt;</span> <span class="n">arrowf</span> <span class="mi">3</span>
