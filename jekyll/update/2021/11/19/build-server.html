@@ -1,0 +1,368 @@
+<!doctype html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>💻 Build your own home server | Egor Bronnikov</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="💻 Build your own home server" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Table of contents [0] Introduction [1] Operating System [2] Webdmin [2.1] Installing Webdmin [3] DNS Records [4] Port Routing [5] Nginx [5.1] Installing Nginx [5.2] Adjusting the Firewall [5.3] Checking Web Server [5.4] Setting Up Server Blocks [5.5] Certification [6] Conclusion [7] References" />
+<meta property="og:description" content="Table of contents [0] Introduction [1] Operating System [2] Webdmin [2.1] Installing Webdmin [3] DNS Records [4] Port Routing [5] Nginx [5.1] Installing Nginx [5.2] Adjusting the Firewall [5.3] Checking Web Server [5.4] Setting Up Server Blocks [5.5] Certification [6] Conclusion [7] References" />
+<link rel="canonical" href="/jekyll/update/2021/11/19/build-server.html" />
+<meta property="og:url" content="/jekyll/update/2021/11/19/build-server.html" />
+<meta property="og:site_name" content="Egor Bronnikov" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-19T23:03:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="💻 Build your own home server" />
+<script type="application/ld+json">
+{"headline":"💻 Build your own home server","dateModified":"2021-11-19T23:03:00+03:00","datePublished":"2021-11-19T23:03:00+03:00","url":"/jekyll/update/2021/11/19/build-server.html","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll/update/2021/11/19/build-server.html"},"@type":"BlogPosting","description":"Table of contents [0] Introduction [1] Operating System [2] Webdmin [2.1] Installing Webdmin [3] DNS Records [4] Port Routing [5] Nginx [5.1] Installing Nginx [5.2] Adjusting the Firewall [5.3] Checking Web Server [5.4] Setting Up Server Blocks [5.5] Certification [6] Conclusion [7] References","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Egor Bronnikov" /><link rel="shortcut icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/0aa2407f8d.js" crossorigin="anonymous"></script>
+</head>
+<body><header class="site-header" role="banner">
+    <div class="wrapper"><a class="site-title" rel="author" href="/">Egor Bronnikov</a><div class="site-title" style="padding-left: 15px; color: #149414;"> ><b class="blinking_cursor">_</b></div><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+  
+          <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/books/">Books</a><a class="page-link" href="/cv/">CV</a></div>
+        </nav></div>
+  </header><main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <div class="home">
+      <h1>💻 Build your own home server</h1>
+      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 14px; color: gray;">Nov 19,  2021</p>
+      <p>
+        <i class="fas fa-tag" style="color: #2a7ae2;"></i> Tags: 
+        
+        </i> <a class="post" href="/tag/cs">cs</a>
+        
+      </p>
+      <h2><a id="content">Table of contents </a></h2>
+<ul style="list-style-type: none; margin: 0 0 4% 4%;">
+    <a href="#chapter1"><li>[0] Introduction</li></a>
+    <a href="#chapter2"><li>[1] Operating System</li></a>
+    <a href="#chapter3"><li>[2] Webdmin</li></a>
+    <ul style="list-style-type: none; margin: 0 0 0 3%;">
+        <a href="#chapter3.1"><li>[2.1] Installing Webdmin</li></a>
+    </ul>
+    <a href="#chapter4"><li>[3] DNS Records</li></a>
+    <a href="#chapter5"><li>[4] Port Routing</li></a>
+    <a href="#chapter6"><li>[5] Nginx</li></a>
+    <ul style="list-style-type: none; margin: 0 0 0 3%;">
+        <a href="#chapter6.1"><li>[5.1] Installing Nginx</li></a>
+        <a href="#chapter6.2"><li>[5.2] Adjusting the Firewall</li></a>
+        <a href="#chapter6.3"><li>[5.3] Checking Web Server</li></a>
+        <a href="#chapter6.4"><li>[5.4] Setting Up Server Blocks</li></a>
+        <a href="#chapter6.5"><li>[5.5] Certification</li></a>
+    </ul>
+    <a href="#chapter7"><li>[6] Conclusion</li></a>
+    <a href="#chapter8"><li>[7] References</li></a>
+</ul>
+
+<h2><a id="chapter1" href="#content">[0] Introduction</a></h2>
+
+<p align="justify">I had a fairly old laptop for a long time and no one cared about it. I was sorry that the `piece of iron` was idle. And I got a great idea that it would be cool to build my own server, and I will learn how to do it. So this article was born.</p>
+
+<p align="justify">I decided to use it as cloud drive and hosting for my website <sub>(this website)</sub>.</p>
+
+<p align="center"><img src="/assets/server/laptop.jpg" width="50%" /></p>
+
+<p align="justify">And yeah, that's my boo <sub>a.k.a. War Machine 4001</sub> — <i>ASUS Eee PC 1005PE</i>, for '05 it was very powerful and mobile laptop, but now its a 🗑️.</p>
+
+<h2><a id="chapter2" href="#content">[1] Operating System</a></h2>
+
+<p align="justify">It was decided to install <i><a href="https://ubuntu.com/download/server" target="blank_">Ubuntu Server 20.04.3 LTS</a></i> because it's very stable OS for servers. You can check full setup in this video:</p>
+
+<p align="center"><iframe width="70%" height="315px" src="https://www.youtube.com/embed/lXcfKTNObOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+
+<p align="justify">If you prefer to use a wireless connection, then after OS installation you should install <code>NetworkManager</code>. In my case it's very easy:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>apt-get update <span class="nt">-y</span>                      <span class="c"># update repository</span>
+λ <span class="nb">sudo </span>apt-get upgrade <span class="nt">-y</span>                     <span class="c"># upgrade utilities</span>
+λ <span class="nb">sudo </span>apt-get <span class="nb">install </span>NetworkManager <span class="nt">-y</span>      <span class="c"># install NetworkManager</span>
+λ <span class="nb">sudo </span>systemctl start NetworkManager         <span class="c"># start service</span>
+λ <span class="nb">sudo </span>systemctl <span class="nb">enable </span>NetworkManager        <span class="c"># setup autostart</span>
+</code></pre></div></div>
+
+<p align="justify">If you want to connect public WiFi you should type this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ nmcli device wifi connect <span class="s2">"connection_name"</span>
+</code></pre></div></div>
+
+<p align="justify">where <u>connection_name</u> is name of WiFi network.</p>
+
+<p align="justify">And if you want to connect private WiFi you should type this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ nmcli device wifi connect <span class="s2">"connection_name"</span> password <span class="s2">"password"</span>
+</code></pre></div></div>
+
+<p align="justify">where <u>connection_name</u> is name of WiFi network and <u>password</u> is password for WiFi.</p>
+
+<p align="justify">And if we type <code>ip a</code> we will see IP address of our server. To test local connection you can type <code>ssh username@ip_address</code>, where <u>username</u> is your server's username and <u>ip_address</u> is server's ip address. After that, you can remotely control your server by connecting locally through the terminal.</p>
+
+<p align="justify">The last step is to setup UFW:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>systemctl start ufw      <span class="c"># start service</span>
+λ <span class="nb">sudo </span>systemctl <span class="nb">enable </span>ufw     <span class="c"># setup autostart</span>
+λ <span class="nb">sudo </span>systemctl status ufw     <span class="c"># check service status</span>
+</code></pre></div></div>
+
+<h2><a id="chapter3" href="#content">[2] Webdmin</a></h2>
+
+<p align="justify">Webmin is a convenient web interface for remote computer management.</p>
+
+<h3><a id="chapter3.1" href="#content">[2.1] Installing Webdmin</a></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>apt update <span class="nt">-y</span>
+λ <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget
+λ wget <span class="nt">-q</span> http://www.webmin.com/jcameron-key.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
+λ <span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib"</span>
+λ <span class="nb">sudo </span>apt <span class="nb">install </span>webmin
+λ <span class="nb">sudo </span>ufw allow 10000
+</code></pre></div></div>
+
+<p align="justify">After that, it will be possible to control the server from any device in the local network by clicking on the link <code>http://server_ip_address:10000</code> in the browser.</p>
+
+<p align="center"><img src="/assets/server/webdmin.png" width="100%" /></p>
+
+<h2><a id="chapter4" href="#content">[3] DNS Records</a></h2>
+
+<p align="justify">It may so happen that your provider company didn't give you a public external IP address. If this happens, then you must ask him to be connected. I faced such a situation.</p>
+
+<p align="justify">Ok, after you got the external IP address you should go to the website where you bought the domain and make some records.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A   <span class="k">*</span>      🠒 your_public_IP_address     <span class="c"># `A` DNS record for all others subdomains</span>
+A   @      🠒 your_public_IP_address     <span class="c"># `A` DNS record for `@`</span>
+A   www    🠒 your_public_IP_address     <span class="c"># `A` DNS record for `www`</span>
+</code></pre></div></div>
+
+<h2><a id="chapter5" href="#content">[4] Port Routing</a></h2>
+
+<p align="justify">It is worth noting that we have a public external IP that match to all local devices connected to our network. In order to link to our server, where Nginx will work for us, you need to register <i>Port Forwarding</i>.</p>
+
+<p align="justify">I have a <i>Netis WF2780</i> router. To configure it, I have to open in the browser router's IP address, for example: <code>http://192.168.1.1</code>. After thar I go to <code>`Advanced Settings`</code>. In order to give a permanent IP address to the server, I have to do the following steps: <code>`Network` 🠒 `LAN` 🠒 `DHCP Client List` 🠒 *select server* 🠒 `Operaions` 🠒 `Reserve`</code>. Now, even if our server is disconnected for a long time, the router will remember its MAC address and we will not have to change the settings in the future.</p>
+
+<p align="justify">Let's move on to <i>Port Forwarding</i> by following these steps: <code>`Forwarding` 🠒 `Virtual Servers`</code> and you need to add 3 rows. As an example, let's take that the local IP address of our server is <code>192.168.1.8</code>.</p>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>IP Address</th>
+    <th>Protocol</th>
+    <th>External Port</th>
+  </tr>
+  <tr>
+    <td>ssh</td>
+    <td>192.168.1.8</td>
+    <td>TCP</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>website</td>
+    <td>192.168.1.8</td>
+    <td>TCP</td>
+    <td>80</td>
+  </tr>
+  <tr>
+    <td>website</td>
+    <td>192.168.1.8</td>
+    <td>TCP</td>
+    <td>443</td>
+  </tr>
+</table>
+
+<p align="justify">Now we can move on to the next stage.</p>
+
+<h2><a id="chapter6" href="#content">[5] Nginx</a></h2>
+
+<p align="justify">The next step is to host our website and for this I used Nginx. Soooo, let's go ahead to the setup.</p>
+
+<h3><a id="chapter6.1" href="#content">[5.1] Installing Nginx</a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>apt update
+λ <span class="nb">sudo </span>apt <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<h3><a id="chapter6.2" href="#content">[5.2] Adjusting the Firewall</a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>ufw allow <span class="s2">"Nginx Full"</span>
+λ <span class="nb">sudo </span>ufw status               <span class="c"># check UFW status</span>
+</code></pre></div></div>
+
+<h3><a id="chapter6.3" href="#content">[5.3] Checking Web Server</a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>systemctl status nginx   <span class="c"># check Nginx status</span>
+λ curl <span class="nt">-4</span> icanhazip.com         <span class="c"># get your public IP address</span>
+</code></pre></div></div>
+
+<p align="justify">When you have your server’s IP address, enter it into your browser’s address bar: <code>http://your_server_ip</code> and you should receive the default Nginx landing page. If you are on this page, your server is running correctly and is ready to be managed.</p>
+
+<h3><a id="chapter6.4" href="#content">[5.4] Setting Up Server Blocks</a></h3>
+
+<p align="justify">We load the sources of our website:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">cd</span> <span class="nt">--</span>
+λ git clone https://github.com/endygamedev/endygamedev.github.io.git
+</code></pre></div></div>
+
+<p align="justify">Create the directory for <code>ebronnikov.xyz</code> <sub>(if you are creating your own website, you should replace `ebronnikov.xyz` with your domain name)</sub> as follows, using the <code>-p</code> flag to create any necessary parent directories:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo mkdir</span> <span class="nt">-p</span> /var/www/ebronnikov.xyz/html
+</code></pre></div></div>
+
+<p align="justify">Next, assign ownership of the directory with the <code>$USER</code> environment variable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="nv">$USER</span>:<span class="nv">$USER</span> /var/www/ebronnikov.xyz/html
+</code></pre></div></div>
+
+<p align="justify">The permissions of your web roots should be correct if you haven’t modified your umask value, which sets default file permissions. To ensure that your permissions are correct and allow the owner to read, write, and execute the files while granting only read and execute permissions to groups and others, you can input the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo chmod</span> <span class="nt">-R</span> 755 /var/www/ebronnikov.xyz
+</code></pre></div></div>
+
+<p align="justify">Next, copy all your website sources into <code>html</code> directory:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo cp</span> <span class="nt">-r</span> ~/endygamedev.github.io/<span class="k">*</span> /var/www/ebronnikov.xyz/html/
+</code></pre></div></div>
+
+<p align="justify">To avoid a possible hash bucket memory problem that can arise from adding additional server names, it is necessary to adjust a single value in the <code>/etc/nginx/nginx.conf</code> file. Open the file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>vim /etc/nginx/nginx.conf
+</code></pre></div></div>
+
+<p align="justify">Find the <code>server_names_hash_bucket_size</code> directive and remove the <code>#</code> symbol to uncomment the line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/<span class="k">*</span> Filename: /etc/nginx/nginx.conf <span class="k">*</span>/
+
+...
+http <span class="o">{</span>
+    ...
+    server_names_hash_bucket_size 64<span class="p">;</span>
+    ...
+<span class="o">}</span>
+...
+</code></pre></div></div>
+
+<p align="justify">Setup default configuration:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>vim /etc/nginx/sites-available/default
+</code></pre></div></div>
+
+<p align="justify">And edit such row:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/<span class="k">*</span> Filename: /etc/nginx/sites-available/default <span class="k">*</span>/
+
+server <span class="o">{</span>
+    ...
+    <span class="c"># listen 80 default_server;</span>
+    <span class="c"># listen [::]:80 default_server;</span>
+    listen 80<span class="p">;</span>
+    server_name ebronnikov.xyz www.ebronnikov.xyz<span class="p">;</span>
+    ...
+    <span class="c"># root /var/www/html;</span>
+    root /var/www/ebronnikov.xyz/html<span class="p">;</span>
+    ...
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p align="justify">Restart Nginx service:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>service nginx restart
+</code></pre></div></div>
+
+<p align="justify">After that you can type: <code>http://ebronnikov.xyz</code> into your browser’s address bar and get your webpage. <u>BUT</u> we ended up with an uncertified website, so we need to move on to the certification stage.</p>
+
+<h3><a id="chapter6.5" href="#content">[5.5] Certification</a></h3>
+
+<p align="justify">We will use the utility <i><a href="https://github.com/certbot/certbot" target="blank_">Certbot</a></i>.</p>
+
+<p align="justify">Installing Certbot:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ curl <span class="nt">-o-</span> https://raw.githubusercontent.com/vinyll/certbot-install/master/install.sh | bash
+</code></pre></div></div>
+
+<p align="justify">Setup certification:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ <span class="nb">sudo </span>certbot <span class="nt">--nginx</span> <span class="nt">-d</span> ebronnikov.xyz <span class="nt">-d</span> www.ebronnikov.xyz
+λ <span class="nb">sudo </span>certbot renew <span class="nt">--dry-run</span>      <span class="c"># Only valid for 90 days</span>
+</code></pre></div></div>
+
+<p align="justify">After that, you can go to the website <code>ebronnikov.xyz</code> and everything should work correctly.</p>
+
+<h2><a id="chapter7" href="#content">[6] Conclusion</a></h2>
+
+<p align="justify">As a result, we got a working server on which you can store some files and host various websites, you could still install a database, but this is another time.</p>
+
+<h2><a id="chapter8" href="#content">[7] References</a></h2>
+<ul style="font-size: 18px; list-style-type: none; margin: 0 0 0 3%;">
+    <a href="https://youtu.be/lXcfKTNObOo" target="blank_"><li>[1] Turning an OLD PC/Laptop into a Media Server!</li></a>
+    <a href="https://youtu.be/1cKF_pJ8b_o" target="blank_"><li>[2] Learn how to setup a domain with Nginx in less than 4 minutes!</li></a>
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04" target="blank_"><li>[3] How To Install Nginx on Ubuntu 20.04</li></a>
+    <a href="https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bddd11bf8953a896" target="blank_"><li>[4] Node.js Deployment</li></a>
+    <a href="https://github.com/vinyll/certbot-install#how-to-install" target="blank_"><li>[5] Certbot installer</li></a>
+</ul>
+<p align="center">and a lot of Google ...</p>
+<hr />
+
+<h2 align="center">✌️ i didn’t think of what to write ...</h2>
+
+      </div>
+    </div>
+  </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <h2>Egor Bronnikov</h2>
+        <p>
+          <a href="mailto:bronnikov.40@mail.ru"><span>bronnikov.40@mail.ru</span></a>
+        </p>
+        <p>
+          <a href="https://t.me/endygamedev" target="blank_">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/minima-social-icons.svg#telegram"></use>
+              </svg><span>endygamedev</span>
+          </a>
+          <a href="https://t.me/valleyinkentucky" target="blank_" style="padding-left: 15px;">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/minima-social-icons.svg#telegram"></use>
+              </svg>
+              <span>Valley in Kentucky</span>
+          </a>
+        </p>
+        <p>
+          <a href="https://github.com/endygamedev" target="blank_">
+              <svg class="svg-icon">
+                <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+              </svg><span>endygamedev</span>
+          </a>
+          <a href="https://www.instagram.com/endygamedev/" style="padding-left: 15px;" target="blank_">
+              <svg class="svg-icon orange">
+                <use xlink:href="/assets/minima-social-icons.svg#instagram"></use>
+              </svg><span>endygamedev</span>
+          </a>
+        </p>
+        <sup>y'all know, what happens on Earth stays on Earth .</sup>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul></div>
+
+  </div>
+
+</footer></body>
+</html>

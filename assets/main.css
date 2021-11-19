@@ -79,7 +79,7 @@ table td { border: 1px solid #e8e8e8; }
 /** Site header */
 .site-header { border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 55.95px; position: relative; }
 
-.blinking_cursor { animation: blinker 1s none infinite; font-size: 32px; }
+.blinking_cursor { animation: blinker 1s none infinite; font-size: 32px; font-weight: lighter; }
 
 .site-title { font-size: 26px; font-weight: 300; line-height: 54px; letter-spacing: -1px; margin-bottom: 0; float: left; }
 

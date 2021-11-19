@@ -1,4 +1,269 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-06T16:49:43+03:00</updated><id>/feed.xml</id><title type="html">Egor Bronnikov</title><entry><title type="html">💻 How monads work?</title><link href="/jekyll/update/2021/10/24/monads.html" rel="alternate" type="text/html" title="💻 How monads work?" /><published>2021-10-24T14:30:00+03:00</published><updated>2021-10-24T14:30:00+03:00</updated><id>/jekyll/update/2021/10/24/monads</id><content type="html" xml:base="/jekyll/update/2021/10/24/monads.html">&lt;p&gt;In this article we will see with an example what monad is.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-19T23:56:19+03:00</updated><id>/feed.xml</id><title type="html">Egor Bronnikov</title><entry><title type="html">💻 Build your own home server</title><link href="/jekyll/update/2021/11/19/build-server.html" rel="alternate" type="text/html" title="💻 Build your own home server" /><published>2021-11-19T23:03:00+03:00</published><updated>2021-11-19T23:03:00+03:00</updated><id>/jekyll/update/2021/11/19/build-server</id><content type="html" xml:base="/jekyll/update/2021/11/19/build-server.html">&lt;h2&gt;&lt;a id=&quot;content&quot;&gt;Table of contents &lt;/a&gt;&lt;/h2&gt;
+&lt;ul style=&quot;list-style-type: none; margin: 0 0 4% 4%;&quot;&gt;
+    &lt;a href=&quot;#chapter1&quot;&gt;&lt;li&gt;[0] Introduction&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;#chapter2&quot;&gt;&lt;li&gt;[1] Operating System&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;#chapter3&quot;&gt;&lt;li&gt;[2] Webdmin&lt;/li&gt;&lt;/a&gt;
+    &lt;ul style=&quot;list-style-type: none; margin: 0 0 0 3%;&quot;&gt;
+        &lt;a href=&quot;#chapter3.1&quot;&gt;&lt;li&gt;[2.1] Installing Webdmin&lt;/li&gt;&lt;/a&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;#chapter4&quot;&gt;&lt;li&gt;[3] DNS Records&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;#chapter5&quot;&gt;&lt;li&gt;[4] Port Routing&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;#chapter6&quot;&gt;&lt;li&gt;[5] Nginx&lt;/li&gt;&lt;/a&gt;
+    &lt;ul style=&quot;list-style-type: none; margin: 0 0 0 3%;&quot;&gt;
+        &lt;a href=&quot;#chapter6.1&quot;&gt;&lt;li&gt;[5.1] Installing Nginx&lt;/li&gt;&lt;/a&gt;
+        &lt;a href=&quot;#chapter6.2&quot;&gt;&lt;li&gt;[5.2] Adjusting the Firewall&lt;/li&gt;&lt;/a&gt;
+        &lt;a href=&quot;#chapter6.3&quot;&gt;&lt;li&gt;[5.3] Checking Web Server&lt;/li&gt;&lt;/a&gt;
+        &lt;a href=&quot;#chapter6.4&quot;&gt;&lt;li&gt;[5.4] Setting Up Server Blocks&lt;/li&gt;&lt;/a&gt;
+        &lt;a href=&quot;#chapter6.5&quot;&gt;&lt;li&gt;[5.5] Certification&lt;/li&gt;&lt;/a&gt;
+    &lt;/ul&gt;
+    &lt;a href=&quot;#chapter7&quot;&gt;&lt;li&gt;[6] Conclusion&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;#chapter8&quot;&gt;&lt;li&gt;[7] References&lt;/li&gt;&lt;/a&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter1&quot; href=&quot;#content&quot;&gt;[0] Introduction&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;I had a fairly old laptop for a long time and no one cared about it. I was sorry that the `piece of iron` was idle. And I got a great idea that it would be cool to build my own server, and I will learn how to do it. So this article was born.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;I decided to use it as cloud drive and hosting for my website &lt;sub&gt;(this website)&lt;/sub&gt;.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/server/laptop.jpg&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;And yeah, that&apos;s my boo &lt;sub&gt;a.k.a. War Machine 4001&lt;/sub&gt; — &lt;i&gt;ASUS Eee PC 1005PE&lt;/i&gt;, for &apos;05 it was very powerful and mobile laptop, but now its a 🗑️.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter2&quot; href=&quot;#content&quot;&gt;[1] Operating System&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;It was decided to install &lt;i&gt;&lt;a href=&quot;https://ubuntu.com/download/server&quot; target=&quot;blank_&quot;&gt;Ubuntu Server 20.04.3 LTS&lt;/a&gt;&lt;/i&gt; because it&apos;s very stable OS for servers. You can check full setup in this video:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315px&quot; src=&quot;https://www.youtube.com/embed/lXcfKTNObOo&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;If you prefer to use a wireless connection, then after OS installation you should install &lt;code&gt;NetworkManager&lt;/code&gt;. In my case it&apos;s very easy:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;                      &lt;span class=&quot;c&quot;&gt;# update repository&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get upgrade &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;                     &lt;span class=&quot;c&quot;&gt;# upgrade utilities&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;NetworkManager &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# install NetworkManager&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start NetworkManager         &lt;span class=&quot;c&quot;&gt;# start service&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;NetworkManager        &lt;span class=&quot;c&quot;&gt;# setup autostart&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;If you want to connect public WiFi you should type this:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ nmcli device wifi connect &lt;span class=&quot;s2&quot;&gt;&quot;connection_name&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;where &lt;u&gt;connection_name&lt;/u&gt; is name of WiFi network.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;And if you want to connect private WiFi you should type this:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ nmcli device wifi connect &lt;span class=&quot;s2&quot;&gt;&quot;connection_name&quot;&lt;/span&gt; password &lt;span class=&quot;s2&quot;&gt;&quot;password&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;where &lt;u&gt;connection_name&lt;/u&gt; is name of WiFi network and &lt;u&gt;password&lt;/u&gt; is password for WiFi.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;And if we type &lt;code&gt;ip a&lt;/code&gt; we will see IP address of our server. To test local connection you can type &lt;code&gt;ssh username@ip_address&lt;/code&gt;, where &lt;u&gt;username&lt;/u&gt; is your server&apos;s username and &lt;u&gt;ip_address&lt;/u&gt; is server&apos;s ip address. After that, you can remotely control your server by connecting locally through the terminal.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;The last step is to setup UFW:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start ufw      &lt;span class=&quot;c&quot;&gt;# start service&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;ufw     &lt;span class=&quot;c&quot;&gt;# setup autostart&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl status ufw     &lt;span class=&quot;c&quot;&gt;# check service status&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter3&quot; href=&quot;#content&quot;&gt;[2] Webdmin&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Webmin is a convenient web interface for remote computer management.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a id=&quot;chapter3.1&quot; href=&quot;#content&quot;&gt;[2.1] Installing Webdmin&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt update &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;software-properties-common apt-transport-https wget
+λ wget &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; http://www.webmin.com/jcameron-key.asc &lt;span class=&quot;nt&quot;&gt;-O-&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-key add -
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;add-apt-repository &lt;span class=&quot;s2&quot;&gt;&quot;deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib&quot;&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;webmin
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw allow 10000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;After that, it will be possible to control the server from any device in the local network by clicking on the link &lt;code&gt;http://server_ip_address:10000&lt;/code&gt; in the browser.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/server/webdmin.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter4&quot; href=&quot;#content&quot;&gt;[3] DNS Records&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;It may so happen that your provider company didn&apos;t give you a public external IP address. If this happens, then you must ask him to be connected. I faced such a situation.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Ok, after you got the external IP address you should go to the website where you bought the domain and make some records.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A   &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;      🠒 your_public_IP_address     &lt;span class=&quot;c&quot;&gt;# `A` DNS record for all others subdomains&lt;/span&gt;
+A   @      🠒 your_public_IP_address     &lt;span class=&quot;c&quot;&gt;# `A` DNS record for `@`&lt;/span&gt;
+A   www    🠒 your_public_IP_address     &lt;span class=&quot;c&quot;&gt;# `A` DNS record for `www`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter5&quot; href=&quot;#content&quot;&gt;[4] Port Routing&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;It is worth noting that we have a public external IP that match to all local devices connected to our network. In order to link to our server, where Nginx will work for us, you need to register &lt;i&gt;Port Forwarding&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;I have a &lt;i&gt;Netis WF2780&lt;/i&gt; router. To configure it, I have to open in the browser router&apos;s IP address, for example: &lt;code&gt;http://192.168.1.1&lt;/code&gt;. After thar I go to &lt;code&gt;`Advanced Settings`&lt;/code&gt;. In order to give a permanent IP address to the server, I have to do the following steps: &lt;code&gt;`Network` 🠒 `LAN` 🠒 `DHCP Client List` 🠒 *select server* 🠒 `Operaions` 🠒 `Reserve`&lt;/code&gt;. Now, even if our server is disconnected for a long time, the router will remember its MAC address and we will not have to change the settings in the future.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Let&apos;s move on to &lt;i&gt;Port Forwarding&lt;/i&gt; by following these steps: &lt;code&gt;`Forwarding` 🠒 `Virtual Servers`&lt;/code&gt; and you need to add 3 rows. As an example, let&apos;s take that the local IP address of our server is &lt;code&gt;192.168.1.8&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Description&lt;/th&gt;
+    &lt;th&gt;IP Address&lt;/th&gt;
+    &lt;th&gt;Protocol&lt;/th&gt;
+    &lt;th&gt;External Port&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;ssh&lt;/td&gt;
+    &lt;td&gt;192.168.1.8&lt;/td&gt;
+    &lt;td&gt;TCP&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;website&lt;/td&gt;
+    &lt;td&gt;192.168.1.8&lt;/td&gt;
+    &lt;td&gt;TCP&lt;/td&gt;
+    &lt;td&gt;80&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;website&lt;/td&gt;
+    &lt;td&gt;192.168.1.8&lt;/td&gt;
+    &lt;td&gt;TCP&lt;/td&gt;
+    &lt;td&gt;443&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Now we can move on to the next stage.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter6&quot; href=&quot;#content&quot;&gt;[5] Nginx&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;The next step is to host our website and for this I used Nginx. Soooo, let&apos;s go ahead to the setup.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a id=&quot;chapter6.1&quot; href=&quot;#content&quot;&gt;[5.1] Installing Nginx&lt;/a&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt update
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt;&lt;a id=&quot;chapter6.2&quot; href=&quot;#content&quot;&gt;[5.2] Adjusting the Firewall&lt;/a&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw allow &lt;span class=&quot;s2&quot;&gt;&quot;Nginx Full&quot;&lt;/span&gt;
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;ufw status               &lt;span class=&quot;c&quot;&gt;# check UFW status&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt;&lt;a id=&quot;chapter6.3&quot; href=&quot;#content&quot;&gt;[5.3] Checking Web Server&lt;/a&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl status nginx   &lt;span class=&quot;c&quot;&gt;# check Nginx status&lt;/span&gt;
+λ curl &lt;span class=&quot;nt&quot;&gt;-4&lt;/span&gt; icanhazip.com         &lt;span class=&quot;c&quot;&gt;# get your public IP address&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;When you have your server’s IP address, enter it into your browser’s address bar: &lt;code&gt;http://your_server_ip&lt;/code&gt; and you should receive the default Nginx landing page. If you are on this page, your server is running correctly and is ready to be managed.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a id=&quot;chapter6.4&quot; href=&quot;#content&quot;&gt;[5.4] Setting Up Server Blocks&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot;&gt;We load the sources of our website:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
+λ git clone https://github.com/endygamedev/endygamedev.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Create the directory for &lt;code&gt;ebronnikov.xyz&lt;/code&gt; &lt;sub&gt;(if you are creating your own website, you should replace `ebronnikov.xyz` with your domain name)&lt;/sub&gt; as follows, using the &lt;code&gt;-p&lt;/code&gt; flag to create any necessary parent directories:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /var/www/ebronnikov.xyz/html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Next, assign ownership of the directory with the &lt;code&gt;$USER&lt;/code&gt; environment variable:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo chown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;:&lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /var/www/ebronnikov.xyz/html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;The permissions of your web roots should be correct if you haven’t modified your umask value, which sets default file permissions. To ensure that your permissions are correct and allow the owner to read, write, and execute the files while granting only read and execute permissions to groups and others, you can input the following command:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo chmod&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 755 /var/www/ebronnikov.xyz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Next, copy all your website sources into &lt;code&gt;html&lt;/code&gt; directory:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; ~/endygamedev.github.io/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /var/www/ebronnikov.xyz/html/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;To avoid a possible hash bucket memory problem that can arise from adding additional server names, it is necessary to adjust a single value in the &lt;code&gt;/etc/nginx/nginx.conf&lt;/code&gt; file. Open the file:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vim /etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Find the &lt;code&gt;server_names_hash_bucket_size&lt;/code&gt; directive and remove the &lt;code&gt;#&lt;/code&gt; symbol to uncomment the line:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Filename: /etc/nginx/nginx.conf &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+
+...
+http &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    ...
+    server_names_hash_bucket_size 64&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    ...
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Setup default configuration:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vim /etc/nginx/sites-available/default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;And edit such row:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Filename: /etc/nginx/sites-available/default &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/
+
+server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    ...
+    &lt;span class=&quot;c&quot;&gt;# listen 80 default_server;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# listen [::]:80 default_server;&lt;/span&gt;
+    listen 80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    server_name ebronnikov.xyz www.ebronnikov.xyz&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    ...
+    &lt;span class=&quot;c&quot;&gt;# root /var/www/html;&lt;/span&gt;
+    root /var/www/ebronnikov.xyz/html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    ...
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Restart Nginx service:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service nginx restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;After that you can type: &lt;code&gt;http://ebronnikov.xyz&lt;/code&gt; into your browser’s address bar and get your webpage. &lt;u&gt;BUT&lt;/u&gt; we ended up with an uncertified website, so we need to move on to the certification stage.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a id=&quot;chapter6.5&quot; href=&quot;#content&quot;&gt;[5.5] Certification&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p align=&quot;justify&quot;&gt;We will use the utility &lt;i&gt;&lt;a href=&quot;https://github.com/certbot/certbot&quot; target=&quot;blank_&quot;&gt;Certbot&lt;/a&gt;&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Installing Certbot:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ curl &lt;span class=&quot;nt&quot;&gt;-o-&lt;/span&gt; https://raw.githubusercontent.com/vinyll/certbot-install/master/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;Setup certification:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;certbot &lt;span class=&quot;nt&quot;&gt;--nginx&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; ebronnikov.xyz &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; www.ebronnikov.xyz
+λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;certbot renew &lt;span class=&quot;nt&quot;&gt;--dry-run&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# Only valid for 90 days&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;justify&quot;&gt;After that, you can go to the website &lt;code&gt;ebronnikov.xyz&lt;/code&gt; and everything should work correctly.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter7&quot; href=&quot;#content&quot;&gt;[6] Conclusion&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;As a result, we got a working server on which you can store some files and host various websites, you could still install a database, but this is another time.&lt;/p&gt;
+
+&lt;h2&gt;&lt;a id=&quot;chapter8&quot; href=&quot;#content&quot;&gt;[7] References&lt;/a&gt;&lt;/h2&gt;
+&lt;ul style=&quot;font-size: 18px; list-style-type: none; margin: 0 0 0 3%;&quot;&gt;
+    &lt;a href=&quot;https://youtu.be/lXcfKTNObOo&quot; target=&quot;blank_&quot;&gt;&lt;li&gt;[1] Turning an OLD PC/Laptop into a Media Server!&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://youtu.be/1cKF_pJ8b_o&quot; target=&quot;blank_&quot;&gt;&lt;li&gt;[2] Learn how to setup a domain with Nginx in less than 4 minutes!&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04&quot; target=&quot;blank_&quot;&gt;&lt;li&gt;[3] How To Install Nginx on Ubuntu 20.04&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bddd11bf8953a896&quot; target=&quot;blank_&quot;&gt;&lt;li&gt;[4] Node.js Deployment&lt;/li&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/vinyll/certbot-install#how-to-install&quot; target=&quot;blank_&quot;&gt;&lt;li&gt;[5] Certbot installer&lt;/li&gt;&lt;/a&gt;
+&lt;/ul&gt;
+&lt;p align=&quot;center&quot;&gt;and a lot of Google ...&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 align=&quot;center&quot;&gt;✌️ i didn’t think of what to write ...&lt;/h2&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><category term="cs" /><summary type="html">Table of contents [0] Introduction [1] Operating System [2] Webdmin [2.1] Installing Webdmin [3] DNS Records [4] Port Routing [5] Nginx [5.1] Installing Nginx [5.2] Adjusting the Firewall [5.3] Checking Web Server [5.4] Setting Up Server Blocks [5.5] Certification [6] Conclusion [7] References</summary></entry><entry><title type="html">💻 How monads work?</title><link href="/jekyll/update/2021/10/24/monads.html" rel="alternate" type="text/html" title="💻 How monads work?" /><published>2021-10-24T14:30:00+03:00</published><updated>2021-10-24T14:30:00+03:00</updated><id>/jekyll/update/2021/10/24/monads</id><content type="html" xml:base="/jekyll/update/2021/10/24/monads.html">&lt;p&gt;In this article we will see with an example what monad is.&lt;/p&gt;
 
 &lt;h2 id=&quot;monad-typeclass&quot;&gt;Monad typeclass&lt;/h2&gt;
 &lt;p&gt;In the class &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Monad&lt;/code&gt;, 4 operators are implemented: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(&amp;gt;&amp;gt;=)&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(&amp;gt;&amp;gt;)&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fail&lt;/code&gt;.&lt;/p&gt;
