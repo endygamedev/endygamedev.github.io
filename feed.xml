@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-02-23T14:57:42+03:00</updated><id>/feed.xml</id><title type="html">Egor Bronnikov</title><entry><title type="html">💻 Build your own home server</title><link href="/jekyll/update/2021/11/19/build-server.html" rel="alternate" type="text/html" title="💻 Build your own home server" /><published>2021-11-19T23:03:00+03:00</published><updated>2021-11-19T23:03:00+03:00</updated><id>/jekyll/update/2021/11/19/build-server</id><content type="html" xml:base="/jekyll/update/2021/11/19/build-server.html">&lt;h2&gt;&lt;a id=&quot;content&quot;&gt;Table of contents &lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-02-26T20:18:15+03:00</updated><id>/feed.xml</id><title type="html">Egor Bronnikov</title><entry><title type="html">💻 Build your own home server</title><link href="/jekyll/update/2021/11/19/build-server.html" rel="alternate" type="text/html" title="💻 Build your own home server" /><published>2021-11-19T23:03:00+03:00</published><updated>2021-11-19T23:03:00+03:00</updated><id>/jekyll/update/2021/11/19/build-server</id><content type="html" xml:base="/jekyll/update/2021/11/19/build-server.html">&lt;h2&gt;&lt;a id=&quot;content&quot;&gt;Table of contents &lt;/a&gt;&lt;/h2&gt;
 &lt;ul style=&quot;list-style-type: none; margin: 0 0 4% 4%;&quot;&gt;
     &lt;a href=&quot;#chapter1&quot;&gt;&lt;li&gt;[0] Introduction&lt;/li&gt;&lt;/a&gt;
     &lt;a href=&quot;#chapter2&quot;&gt;&lt;li&gt;[1] Operating System&lt;/li&gt;&lt;/a&gt;
@@ -28,15 +28,15 @@
 
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/server/laptop.jpg&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
-&lt;p align=&quot;justify&quot;&gt;And yeah, that&apos;s my boo &lt;sub&gt;a.k.a. War Machine 4001&lt;/sub&gt; — &lt;i&gt;ASUS Eee PC 1005PE&lt;/i&gt;, for &apos;05 it was very powerful and mobile laptop, but now its a 🗑️.&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;And yeah, that's my boo &lt;sub&gt;a.k.a. War Machine 4001&lt;/sub&gt; — &lt;i&gt;ASUS Eee PC 1005PE&lt;/i&gt;, for '05 it was very powerful and mobile laptop, but now its a 🗑️.&lt;/p&gt;
 
 &lt;h2&gt;&lt;a id=&quot;chapter2&quot; href=&quot;#content&quot;&gt;[1] Operating System&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p align=&quot;justify&quot;&gt;It was decided to install &lt;i&gt;&lt;a href=&quot;https://ubuntu.com/download/server&quot; target=&quot;blank_&quot;&gt;Ubuntu Server 20.04.3 LTS&lt;/a&gt;&lt;/i&gt; because it&apos;s very stable OS for servers. You can check full setup in this video:&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;It was decided to install &lt;i&gt;&lt;a href=&quot;https://ubuntu.com/download/server&quot; target=&quot;blank_&quot;&gt;Ubuntu Server 20.04.3 LTS&lt;/a&gt;&lt;/i&gt; because it's very stable OS for servers. You can check full setup in this video:&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315px&quot; src=&quot;https://www.youtube.com/embed/lXcfKTNObOo&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
-&lt;p align=&quot;justify&quot;&gt;If you prefer to use a wireless connection, then after OS installation you should install &lt;code&gt;NetworkManager&lt;/code&gt;. In my case it&apos;s very easy:&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;If you prefer to use a wireless connection, then after OS installation you should install &lt;code&gt;NetworkManager&lt;/code&gt;. In my case it's very easy:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;                      &lt;span class=&quot;c&quot;&gt;# update repository&lt;/span&gt;
 λ &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get upgrade &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;                     &lt;span class=&quot;c&quot;&gt;# upgrade utilities&lt;/span&gt;
@@ -59,7 +59,7 @@
 
 &lt;p align=&quot;justify&quot;&gt;where &lt;u&gt;connection_name&lt;/u&gt; is name of WiFi network and &lt;u&gt;password&lt;/u&gt; is password for WiFi.&lt;/p&gt;
 
-&lt;p align=&quot;justify&quot;&gt;And if we type &lt;code&gt;ip a&lt;/code&gt; we will see IP address of our server. To test local connection you can type &lt;code&gt;ssh username@ip_address&lt;/code&gt;, where &lt;u&gt;username&lt;/u&gt; is your server&apos;s username and &lt;u&gt;ip_address&lt;/u&gt; is server&apos;s ip address. After that, you can remotely control your server by connecting locally through the terminal.&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;And if we type &lt;code&gt;ip a&lt;/code&gt; we will see IP address of our server. To test local connection you can type &lt;code&gt;ssh username@ip_address&lt;/code&gt;, where &lt;u&gt;username&lt;/u&gt; is your server's username and &lt;u&gt;ip_address&lt;/u&gt; is server's ip address. After that, you can remotely control your server by connecting locally through the terminal.&lt;/p&gt;
 
 &lt;p align=&quot;justify&quot;&gt;The last step is to setup UFW:&lt;/p&gt;
 
@@ -87,7 +87,7 @@
 
 &lt;h2&gt;&lt;a id=&quot;chapter4&quot; href=&quot;#content&quot;&gt;[3] DNS Records&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p align=&quot;justify&quot;&gt;It may so happen that your provider company didn&apos;t give you a public external IP address. If this happens, then you must ask him to be connected. I faced such a situation.&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;It may so happen that your provider company didn't give you a public external IP address. If this happens, then you must ask him to be connected. I faced such a situation.&lt;/p&gt;
 
 &lt;p align=&quot;justify&quot;&gt;Ok, after you got the external IP address you should go to the website where you bought the domain and make some records.&lt;/p&gt;
 
@@ -100,9 +100,9 @@ A   www    🠒 your_public_IP_address     &lt;span class=&quot;c&quot;&gt;# `A`
 
 &lt;p align=&quot;justify&quot;&gt;It is worth noting that we have a public external IP that match to all local devices connected to our network. In order to link to our server, where Nginx will work for us, you need to register &lt;i&gt;Port Forwarding&lt;/i&gt;.&lt;/p&gt;
 
-&lt;p align=&quot;justify&quot;&gt;I have a &lt;i&gt;Netis WF2780&lt;/i&gt; router. To configure it, I have to open in the browser router&apos;s IP address, for example: &lt;code&gt;http://192.168.1.1&lt;/code&gt;. After thar I go to &lt;code&gt;`Advanced Settings`&lt;/code&gt;. In order to give a permanent IP address to the server, I have to do the following steps: &lt;code&gt;`Network` 🠒 `LAN` 🠒 `DHCP Client List` 🠒 *select server* 🠒 `Operations` 🠒 `Reserve`&lt;/code&gt;. Now, even if our server is disconnected for a long time, the router will remember its MAC address and we will not have to change the settings in the future.&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;I have a &lt;i&gt;Netis WF2780&lt;/i&gt; router. To configure it, I have to open in the browser router's IP address, for example: &lt;code&gt;http://192.168.1.1&lt;/code&gt;. After thar I go to &lt;code&gt;`Advanced Settings`&lt;/code&gt;. In order to give a permanent IP address to the server, I have to do the following steps: &lt;code&gt;`Network` 🠒 `LAN` 🠒 `DHCP Client List` 🠒 *select server* 🠒 `Operations` 🠒 `Reserve`&lt;/code&gt;. Now, even if our server is disconnected for a long time, the router will remember its MAC address and we will not have to change the settings in the future.&lt;/p&gt;
 
-&lt;p align=&quot;justify&quot;&gt;Let&apos;s move on to &lt;i&gt;Port Forwarding&lt;/i&gt; by following these steps: &lt;code&gt;`Forwarding` 🠒 `Virtual Servers`&lt;/code&gt; and you need to add 3 rows. As an example, let&apos;s take that the local IP address of our server is &lt;code&gt;192.168.1.8&lt;/code&gt;.&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;Let's move on to &lt;i&gt;Port Forwarding&lt;/i&gt; by following these steps: &lt;code&gt;`Forwarding` 🠒 `Virtual Servers`&lt;/code&gt; and you need to add 3 rows. As an example, let's take that the local IP address of our server is &lt;code&gt;192.168.1.8&lt;/code&gt;.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tr&gt;
@@ -135,7 +135,7 @@ A   www    🠒 your_public_IP_address     &lt;span class=&quot;c&quot;&gt;# `A`
 
 &lt;h2&gt;&lt;a id=&quot;chapter6&quot; href=&quot;#content&quot;&gt;[5] Nginx&lt;/a&gt;&lt;/h2&gt;
 
-&lt;p align=&quot;justify&quot;&gt;The next step is to host our website and for this I used Nginx. Soooo, let&apos;s go ahead to the setup.&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;The next step is to host our website and for this I used Nginx. Soooo, let's go ahead to the setup.&lt;/p&gt;
 
 &lt;h3&gt;&lt;a id=&quot;chapter6.1&quot; href=&quot;#content&quot;&gt;[5.1] Installing Nginx&lt;/a&gt;&lt;/h3&gt;
 
@@ -437,26 +437,26 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;h2&gt;&lt;a id=&quot;top&quot;&gt;Top&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;a href=&quot;#damn&quot;&gt;Kendrick Lamar — «DAMN.»&lt;/a&gt;&lt;sub&gt;/ &apos;17&lt;/sub&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#2014fhd&quot;&gt;J. Cole — «2014 Forest Hills Drive»&lt;/a&gt;&lt;sub&gt;/ &apos;14&lt;/sub&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#blonde&quot;&gt;Frank Ocean — «Blonde»&lt;/a&gt;&lt;sub&gt;/ &apos;16&lt;/sub&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#the-search&quot;&gt;NF — «The Search»&lt;/a&gt;&lt;sub&gt;/ &apos;19&lt;/sub&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#eall&quot;&gt;6LACK — «East Atlanta Love Letter»&lt;/a&gt;&lt;sub&gt;/ &apos;18&lt;/sub&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#damn&quot;&gt;Kendrick Lamar — «DAMN.»&lt;/a&gt;&lt;sub&gt;/ '17&lt;/sub&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#2014fhd&quot;&gt;J. Cole — «2014 Forest Hills Drive»&lt;/a&gt;&lt;sub&gt;/ '14&lt;/sub&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#blonde&quot;&gt;Frank Ocean — «Blonde»&lt;/a&gt;&lt;sub&gt;/ '16&lt;/sub&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#the-search&quot;&gt;NF — «The Search»&lt;/a&gt;&lt;sub&gt;/ '19&lt;/sub&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#eall&quot;&gt;6LACK — «East Atlanta Love Letter»&lt;/a&gt;&lt;sub&gt;/ '18&lt;/sub&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;h2&gt;&lt;a id=&quot;damn&quot; href=&quot;#top&quot;&gt;Kendrick Lamar — «DAMN.»&lt;/a&gt;&lt;/h2&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/top5-albums/damn.jpg&quot; width=&quot;274&quot; style=&quot;border: 10px solid #a60000;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Ууух, я помню, что это был первый англоязычный альбом, который послушал и понял, что рэп не полный &lt;s&gt;shit&lt;/s&gt;. Тогда я ещё не знал кто такой Кендрик и о чём его предыдущие работы. По сути всё его творчество повествует одну длинную историю и этот альбом не стал исключением. Стоит отметить, что все пластинки Кендрика нужно слушать от первой до последней композиции и притом несколько раз. Некоторые темы данного произведения нам не понять, потому что у нас другой менталитет, да и просто исторически как-то по-другому всё сложилось. Несмотря на это Кендрик не скатывается просто к самолюбованию и хаслу, как делают многие, он старается затронуть вечные темы такие как: любовь, человеческая жесткость, верность, страх, беззаконие и многое-многое другое, например один из моих любимых bar&apos;ов с альбома:&lt;/p&gt;
+&lt;p&gt;Ууух, я помню, что это был первый англоязычный альбом, который послушал и понял, что рэп не полный &lt;s&gt;shit&lt;/s&gt;. Тогда я ещё не знал кто такой Кендрик и о чём его предыдущие работы. По сути всё его творчество повествует одну длинную историю и этот альбом не стал исключением. Стоит отметить, что все пластинки Кендрика нужно слушать от первой до последней композиции и притом несколько раз. Некоторые темы данного произведения нам не понять, потому что у нас другой менталитет, да и просто исторически как-то по-другому всё сложилось. Несмотря на это Кендрик не скатывается просто к самолюбованию и хаслу, как делают многие, он старается затронуть вечные темы такие как: любовь, человеческая жесткость, верность, страх, беззаконие и многое-многое другое, например один из моих любимых bar'ов с альбома:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«Tell me who you loyal to
 Is it money? Is it fame? Is it weed? Is it drink?
-Is it comin&apos; down with the loud pipes in the rain?
-Big chillin&apos;, only for the power in your name
+Is it comin' down with the loud pipes in the rain?
+Big chillin', only for the power in your name
 Tell me who you loyal to
 Is it love for the streets when the lights get dark?
-Is it unconditional when the &apos;Rari don&apos;t start?
-Tell me when your loyalty is comin&apos; from the heart»&lt;/i&gt;
+Is it unconditional when the 'Rari don't start?
+Tell me when your loyalty is comin' from the heart»&lt;/i&gt;
 &lt;/pre&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe src=&quot;https://open.spotify.com/embed/album/4eLPsYPBmXABThSJ821sqY&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
@@ -492,7 +492,7 @@ I said do you wanna, do you wanna be, free?»&lt;/i&gt;
 
 &lt;h2&gt;&lt;a id=&quot;the-search&quot; href=&quot;#top&quot;&gt;NF — «The Search»&lt;/a&gt;&lt;/h2&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/top5-albums/the-search.png&quot; width=&quot;274&quot; style=&quot;border: 10px solid #4a4a4a;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Вообще про NF можно сказать многое. Он является примером того, что если ты не делаешь всякой дичи, то о тебе не говорят в СМИ. Вообще о нём я узнал год назад, хотя на стримингах у него было много прослушиваний и не понимал как так получилось, что по сути он король ноунеймов. У него похожий агрессивный flow на Eminem&apos;а или Logic&apos;а, он сам неоднократно заявлял, что первым его вдохновителем является Eminem, но несмотря на это содержание отличается. Нэйт является глубоко верующим человеком и понятно, что в его треках упоминается Бог и рассуждения о религии, он даже состоит в лейбле Capitol Christian Music Group. Также, fast fact, невозможно услышать в его композициях матерных или оскорбительных слов, вот такой вот он человек. NF неоднократно заявлял, что музыка для него является некой терапией, потому что он может рассказать о том, что лежит у него на душе. Некоторые композиции с этого альбома прям пробивают насквозь. Ещё Нэйт умеет сохранять баланс между fast flow и тем когда можно сбавить темп и рассказать историю более мелодично, ведь flow является инструментом повествования наравне с инструменталом. Так что на данном альбоме затронуты более личные темы, которые близки лично мне.&lt;/p&gt;
+&lt;p&gt;Вообще про NF можно сказать многое. Он является примером того, что если ты не делаешь всякой дичи, то о тебе не говорят в СМИ. Вообще о нём я узнал год назад, хотя на стримингах у него было много прослушиваний и не понимал как так получилось, что по сути он король ноунеймов. У него похожий агрессивный flow на Eminem'а или Logic'а, он сам неоднократно заявлял, что первым его вдохновителем является Eminem, но несмотря на это содержание отличается. Нэйт является глубоко верующим человеком и понятно, что в его треках упоминается Бог и рассуждения о религии, он даже состоит в лейбле Capitol Christian Music Group. Также, fast fact, невозможно услышать в его композициях матерных или оскорбительных слов, вот такой вот он человек. NF неоднократно заявлял, что музыка для него является некой терапией, потому что он может рассказать о том, что лежит у него на душе. Некоторые композиции с этого альбома прям пробивают насквозь. Ещё Нэйт умеет сохранять баланс между fast flow и тем когда можно сбавить темп и рассказать историю более мелодично, ведь flow является инструментом повествования наравне с инструменталом. Так что на данном альбоме затронуты более личные темы, которые близки лично мне.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe src=&quot;https://open.spotify.com/embed/album/46xdC4Qcvscfs3Ai2RIHcv&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 
@@ -505,7 +505,7 @@ Not knowing what love is
 People go through life not showing
 Not showing what love is
 I mean
-It&apos;s like you think you know, but you don’t really know
+It's like you think you know, but you don’t really know
 Then you find out, woah
 You gotta learn things slow
 But one thing I know
@@ -555,16 +555,16 @@ You got all my love»&lt;/i&gt;
 Альбом стартует с песни «9 5 . s o u t h». Эта песня настраивает нас на дальнейшее повествование и задает характер пластинки. В ней Джермейн напоминает нам о своём месте в рэп-тусовке, повествует нам о своей жизни и опыте. Также название песни отсылает нас к дороге на юг по трассе 95, которая идёт от Нью-Йорка, место где Джермейн вырос как исполнитель и где прошла его молодость, до Северной Каролины, место где прошло его детство и школьные годы. Cole сам неоднократно говорил, что у него два дома — NYC и NC.
 &lt;p&gt;Первые строчки, которые я хотел бы отметить это:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«I be stayin&apos; out the way, but if the beef do come around
+&lt;i&gt;«I be stayin' out the way, but if the beef do come around
 Could put a M right on your head, you Luigi brother now»&lt;/i&gt;
 &lt;/pre&gt;
-&lt;p&gt;J. Cole — &apos;рэпер-отшельник&apos;, за всю его карьеру у него никогда не было ни с кем бифа. В этих строчках он говорит об этом, что будет стоять в стороне, но если будет биф, то он назначит награду в &lt;code&gt;&lt;i&gt;«M»&lt;/i&gt;&lt;/code&gt; (1 млн. $) за твою голову и ты станешь братом Луиджи (Марио) из игры &lt;a href=&quot;https://en.wikipedia.org/wiki/Super_Mario_Bros.&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Super Mario Bros.»&lt;/i&gt;&lt;/a&gt;. Просто крутая игра слов.&lt;/p&gt;
+&lt;p&gt;J. Cole — 'рэпер-отшельник', за всю его карьеру у него никогда не было ни с кем бифа. В этих строчках он говорит об этом, что будет стоять в стороне, но если будет биф, то он назначит награду в &lt;code&gt;&lt;i&gt;«M»&lt;/i&gt;&lt;/code&gt; (1 млн. $) за твою голову и ты станешь братом Луиджи (Марио) из игры &lt;a href=&quot;https://en.wikipedia.org/wiki/Super_Mario_Bros.&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Super Mario Bros.»&lt;/i&gt;&lt;/a&gt;. Просто крутая игра слов.&lt;/p&gt;
 
 &lt;p&gt;В следующих строчках я хотел бы показать первую баскетбольную отсылку и не только:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«And got they O&apos;s off, you reach, niggas uppin&apos; like Steph»&lt;/i&gt;
+&lt;i&gt;«And got they O's off, you reach, niggas uppin' like Steph»&lt;/i&gt;
 &lt;/pre&gt;
-&lt;p&gt;Тут Джермейн говорит о том, что &apos;забирает&apos; у молодых рэперóв наркотики и из-за этого их карьеры взлетают как Стеф Карри. Тут он опять же подчёркивает свой статус и влияние на молодёжь.&lt;/p&gt;
+&lt;p&gt;Тут Джермейн говорит о том, что 'забирает' у молодых рэперóв наркотики и из-за этого их карьеры взлетают как Стеф Карри. Тут он опять же подчёркивает свой статус и влияние на молодёжь.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i&gt;reference:&lt;/i&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Stephen_Curry&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Steph Curry&lt;/i&gt;&lt;/a&gt; — трёхкратный чемпион и действующий игрок NBA, который выступает за команду &lt;a href=&quot;https://en.wikipedia.org/wiki/Golden_State_Warriors&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Golden State Warriors»&lt;/i&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/off-season/steph.webp&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
@@ -602,36 +602,36 @@ If you scared to throw it up, get the fuck out the club»&lt;/i&gt;
 &lt;p&gt;Чтобы не затягивать с каждым треком, я просто выпишу ещё строчки, которые просто примечательны.&lt;/p&gt;
 &lt;ol&gt;
     &lt;li&gt;&lt;code&gt;&lt;i&gt;«I-95 shit, Carolina, 2-6, stand up, nigga»&lt;/i&gt;&lt;/code&gt; — опять тема с двумя домами и &lt;code&gt;&lt;i&gt;«2-6»&lt;/i&gt;&lt;/code&gt; — код тюрьмы в родном городе J. Cole — Fayetteville, NC.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Look how everybody clappin&apos; when your thirty-song album do a measly hundred thou&apos;»&lt;/i&gt;&lt;/code&gt; — отсылка к тому что многие молодые ребята сосредотачиваются на количестве, а не на качестве.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«No plans to doze off, the streets, it don&apos;t come with a ref&apos;»&lt;/i&gt;&lt;/code&gt; — тут понятно — &lt;code&gt;&lt;i&gt;«ref&apos;»&lt;/i&gt;&lt;/code&gt; — судия, все дела, ещё одна баскетбольная отсылка. ⛹️‍♀️&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Look how everybody clappin' when your thirty-song album do a measly hundred thou'»&lt;/i&gt;&lt;/code&gt; — отсылка к тому что многие молодые ребята сосредотачиваются на количестве, а не на качестве.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«No plans to doze off, the streets, it don't come with a ref'»&lt;/i&gt;&lt;/code&gt; — тут понятно — &lt;code&gt;&lt;i&gt;«ref'»&lt;/i&gt;&lt;/code&gt; — судия, все дела, ещё одна баскетбольная отсылка. ⛹️‍♀️&lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;h2&gt;&lt;a id=&quot;audio2&quot; href=&quot;#tracklist_&quot;&gt;J. Cole — a m a r i&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;u&gt;Produced by:&lt;/u&gt; T-Minus, J. Cole, Suzuki &amp;amp; Timbaland&lt;/p&gt;
 
-&lt;p&gt;Второй трек на альбоме, «a m a r i», назван в честь сына менеджера лейбла Dreamville, в котором J. Cole является основателем. Также хочется отметить, что на альбоме либо присутствуют сольные треки, либо треки с &apos;семьёй&apos;, теми людьми, которыми, по словам J. Cole, он максимально близок. Для меня под вопросом только Lil Baby. На этом треке J. Cole опять же &apos;показывает свои мускулы&apos;, как он из обычного парня превратился в того, кем он сейчас является. Затрагивает тему жизни простых людей в этом сложном мире. Этим треком он даёт мотивацию другим людям и утверждает, что если у него получилось добиться успеха, то и у тебя тоже получится, чем бы ты не занимался, главное отдавать всего себя.&lt;/p&gt;
+&lt;p&gt;Второй трек на альбоме, «a m a r i», назван в честь сына менеджера лейбла Dreamville, в котором J. Cole является основателем. Также хочется отметить, что на альбоме либо присутствуют сольные треки, либо треки с 'семьёй', теми людьми, которыми, по словам J. Cole, он максимально близок. Для меня под вопросом только Lil Baby. На этом треке J. Cole опять же 'показывает свои мускулы', как он из обычного парня превратился в того, кем он сейчас является. Затрагивает тему жизни простых людей в этом сложном мире. Этим треком он даёт мотивацию другим людям и утверждает, что если у него получилось добиться успеха, то и у тебя тоже получится, чем бы ты не занимался, главное отдавать всего себя.&lt;/p&gt;
 
 &lt;p&gt;В самом начале идёт приятный напев, который, я бы сказал, не свойственен для J. Cole.&lt;br /&gt;
 Открыть разбор трека я хотел бы со следующих строчек:&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;i&gt;«Now I&apos;m at the Garden sittin&apos; half court
-Watchin&apos; Jr. catch it off the backboard»&lt;/i&gt;
+&lt;i&gt;«Now I'm at the Garden sittin' half court
+Watchin' Jr. catch it off the backboard»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Снова баскетбольная отсылка.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i&gt;reference:&lt;/i&gt; &lt;code&gt;&lt;i&gt;«Garden»&lt;/i&gt;&lt;/code&gt; или &lt;a href=&quot;https://en.wikipedia.org/wiki/Madison_Square_Garden&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Madison Square Garden»&lt;/i&gt;&lt;/a&gt; — это домашняя арена команды &lt;a href=&quot;https://en.wikipedia.org/wiki/New_York_Knicks&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«New York Knicks»&lt;/i&gt;&lt;/a&gt;, которая как несложно догадаться находится в NYC.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Вторая же строчка отсылает нас к игроку NBA — &lt;a href=&quot;https://en.wikipedia.org/wiki/Dennis_Smith_Jr.&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Dennis Smith Jr.&lt;/i&gt;&lt;/a&gt;, который выступал и выступает за &apos;Knicks&apos;. Примечательно, что они большие друзья с J. Cole и Dennis родился и провёл своё детство в первом &apos;доме&apos; J. Cole — Fayetteville, NC. Думаю не нужно намекать, что это опять-таки затрагивает тему двух городов. Собственно этот bar отсылает нас к их совместному выступлению на 2019 All-Star Dunk Contest.&lt;/p&gt;
+&lt;p&gt;Вторая же строчка отсылает нас к игроку NBA — &lt;a href=&quot;https://en.wikipedia.org/wiki/Dennis_Smith_Jr.&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Dennis Smith Jr.&lt;/i&gt;&lt;/a&gt;, который выступал и выступает за 'Knicks'. Примечательно, что они большие друзья с J. Cole и Dennis родился и провёл своё детство в первом 'доме' J. Cole — Fayetteville, NC. Думаю не нужно намекать, что это опять-таки затрагивает тему двух городов. Собственно этот bar отсылает нас к их совместному выступлению на 2019 All-Star Dunk Contest.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/5uaTHWCuosA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;p&gt;Первая строчка на куплете безумно классная:&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;i&gt;«Either you gon&apos; hustle or that nigga Uncle Sam got yo&apos; ass re-enlisting»&lt;/i&gt;
+&lt;i&gt;«Either you gon' hustle or that nigga Uncle Sam got yo' ass re-enlisting»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;&lt;i&gt;«Дядя Сэм»&lt;/i&gt;&lt;/code&gt; — это типичный образ США, который ассоциируется с военными конфликтами или политическими карикатурами. Здесь Cole даёт напутственное слово, либо ты зарабатываешь деньги и двигаешься в жизни, либо ты сгниваешь на улице и умираешь, как на войне.&lt;/p&gt;
@@ -639,13 +639,13 @@ Watchin&apos; Jr. catch it off the backboard»&lt;/i&gt;
 &lt;p&gt;Следующая баскетбольная отсылка в треке звучит так:&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;i&gt;«Kill &apos;em on a song, walk up out the booth, do the Westbrook rock-a-baby»&lt;/i&gt;
+&lt;i&gt;«Kill 'em on a song, walk up out the booth, do the Westbrook rock-a-baby»&lt;/i&gt;
 &lt;/pre&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;i&gt;reference:&lt;/i&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Russell_Westbrook&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Russell Westbrook&lt;/i&gt;&lt;/a&gt; — максимально атлетичный игрок NBA на позиции разыгрывающего, который и прославился своими &apos;данными&apos; и очень агрессивной игрой в атаке.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;reference:&lt;/i&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Russell_Westbrook&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Russell Westbrook&lt;/i&gt;&lt;/a&gt; — максимально атлетичный игрок NBA на позиции разыгрывающего, который и прославился своими 'данными' и очень агрессивной игрой в атаке.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/off-season/westbrook.jpg&quot; width=&quot;40%&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;В 2019 году Рассел начал делать жест «Rock-the-baby», то есть &apos;укачивание ребёнка&apos;. Как он сам объяснял этот жест в интервью: &lt;code&gt;&lt;i&gt;«I’m pretty big for my position and I would say I’m probably stronger than other guys at my position. So when I have smaller guys on me you gotta treat them like babies. The guys guarding me don’t love it so much but everybody else loves it.»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;В 2019 году Рассел начал делать жест «Rock-the-baby», то есть 'укачивание ребёнка'. Как он сам объяснял этот жест в интервью: &lt;code&gt;&lt;i&gt;«I’m pretty big for my position and I would say I’m probably stronger than other guys at my position. So when I have smaller guys on me you gotta treat them like babies. The guys guarding me don’t love it so much but everybody else loves it.»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/pmVV-QT4uAw&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;p&gt;Заканчивается композиция словами:&lt;/p&gt;
@@ -658,7 +658,7 @@ Watchin&apos; Jr. catch it off the backboard»&lt;/i&gt;
 &lt;ol&gt;
     &lt;li&gt;&lt;code&gt;&lt;i&gt;«Dreamville the Army, not a Navy»&lt;/i&gt;&lt;/code&gt; — отсылка к собственному лейблу.&lt;/li&gt;
     &lt;li&gt;&lt;code&gt;&lt;i&gt;«My niggas like &quot;Eenie, meenie, miney, moe&quot;»&lt;/i&gt;&lt;/code&gt; — корейский детский счетный стишок, используемый для выбора человека в играх.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I was doin&apos; eighty on the interstate»&lt;/i&gt;&lt;/code&gt; — воспоминание о студенческих годах, когда ему приходилось ездить из NC в NYC и обратно по этому шоссе 95 из &lt;a href=&quot;#audio1&quot;&gt;&lt;i&gt;первого трека&lt;/i&gt;&lt;/a&gt; на альбоме.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I was doin' eighty on the interstate»&lt;/i&gt;&lt;/code&gt; — воспоминание о студенческих годах, когда ему приходилось ездить из NC в NYC и обратно по этому шоссе 95 из &lt;a href=&quot;#audio1&quot;&gt;&lt;i&gt;первого трека&lt;/i&gt;&lt;/a&gt; на альбоме.&lt;/li&gt;
 &lt;/ol&gt;
 
 
@@ -671,7 +671,7 @@ Watchin&apos; Jr. catch it off the backboard»&lt;/i&gt;
 На первой строчке своего парта, J. Cole произносит такие слова:&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;i&gt;«Spiralin&apos; up, just like a rich nigga staircase (Spiral up)»&lt;/i&gt;
+&lt;i&gt;«Spiralin' up, just like a rich nigga staircase (Spiral up)»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Этим он говорит, что богатым легче добиваться успеха. Подобная тема была им раскрыта на песне &lt;a href=&quot;https://youtu.be/bbdgT3_uSLw&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole — Rich Niggaz»&lt;/i&gt;&lt;/a&gt; с альбома 2013 года — «Born Sinner»:&lt;/p&gt;
@@ -688,24 +688,24 @@ Escalade, new Caddy money»&lt;/i&gt;
 
 &lt;p&gt;Следующий фрагмент который я хотел бы выделить звучит так:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Nigga, I&apos;m starvin&apos;, immensely
-Know when I&apos;m done with these songs, you gon&apos; miss me
-Ja Morant, I&apos;m on my Grizzly
+&lt;i&gt;«Nigga, I'm starvin', immensely
+Know when I'm done with these songs, you gon' miss me
+Ja Morant, I'm on my Grizzly
 You niggas just cubs but no, not the ones in the big leagues
-After The Fall Off, I promise I&apos;m comin&apos; to sellin&apos; out Wrigley&apos;s
-Nigga, I&apos;m just a product of poverty, full of narcotics to profit off quickly
+After The Fall Off, I promise I'm comin' to sellin' out Wrigley's
+Nigga, I'm just a product of poverty, full of narcotics to profit off quickly
 My family tree got a history of users that struggle with demons
 Not really the hustler instincts
 Therefore, often, my pockets was empty
-So while some of my partners was servin&apos; up rocks on the corners, the project assemblies
-Me, I was startin&apos; to envy, wanna be on the top where it&apos;s plenty»&lt;/i&gt;
+So while some of my partners was servin' up rocks on the corners, the project assemblies
+Me, I was startin' to envy, wanna be on the top where it's plenty»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Первые две строчки говорят нам о том, что близится конец карьеры J. Cole и когда он её закончит, то нам будет его нехватать.&lt;br /&gt;
 Далее идёт баскетбольная отсылка на молодую звезду NBA — &lt;a href=&quot;https://en.wikipedia.org/wiki/Ja_Morant&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Ja Morant&lt;/i&gt;&lt;/a&gt;. Здесь J. Cole говорит: &lt;code&gt;&lt;i&gt;«I’m on my Grizzly»&lt;/i&gt;&lt;/code&gt; — это означает, что Джермейн работает очень усердно, но также стоит упомянуть, что Ja Morant представляет команду &lt;a href=&quot;https://en.wikipedia.org/wiki/Memphis_Grizzlies&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Memphis Grizzlies»&lt;/i&gt;&lt;/a&gt; и таким образом получается ненавязчивая игра слов.&lt;br /&gt;
 &lt;blockquote class=&quot;twitter-tweet&quot; align=&quot;center&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&amp;quot; ja morant i&amp;#39;m on my grizzly &amp;quot; heard you &lt;a href=&quot;https://twitter.com/JColeNC?ref_src=twsrc%5Etfw&quot;&gt;@JColeNC&lt;/a&gt; 🤝😤&lt;/p&gt;&amp;mdash; Ja Morant (@JaMorant) &lt;a href=&quot;https://twitter.com/JaMorant/status/1393056482510442500?ref_src=twsrc%5Etfw&quot;&gt;May 14, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-После этого Джермейн говорит о своих хейтерах или &apos;детёнышах&apos; — &lt;code&gt;&lt;i&gt;«cubs»&lt;/i&gt;&lt;/code&gt;, что они не для его уровня. Под &lt;code&gt;&lt;i&gt;«big leagues»&lt;/i&gt;&lt;/code&gt; он понимает также бейсбольную команду &lt;a href=&quot;https://en.wikipedia.org/wiki/Chicago_Cubs&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Chicago Cubs»&lt;/i&gt;&lt;/a&gt;, которые выступают в Главной лиге. Опять получается игра слов.&lt;br /&gt;
-&lt;code&gt;&lt;i&gt;«After The Fall Off, I promise I&apos;m comin&apos; to sellin&apos; out Wrigley&apos;s»&lt;/i&gt;&lt;/code&gt; — идёт напоминание того, что сейчас наступает закат карьеры и то что после альбома «The Fall Off» он будет продаваться как Wrigley.&lt;/p&gt;
+После этого Джермейн говорит о своих хейтерах или 'детёнышах' — &lt;code&gt;&lt;i&gt;«cubs»&lt;/i&gt;&lt;/code&gt;, что они не для его уровня. Под &lt;code&gt;&lt;i&gt;«big leagues»&lt;/i&gt;&lt;/code&gt; он понимает также бейсбольную команду &lt;a href=&quot;https://en.wikipedia.org/wiki/Chicago_Cubs&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Chicago Cubs»&lt;/i&gt;&lt;/a&gt;, которые выступают в Главной лиге. Опять получается игра слов.&lt;br /&gt;
+&lt;code&gt;&lt;i&gt;«After The Fall Off, I promise I'm comin' to sellin' out Wrigley's»&lt;/i&gt;&lt;/code&gt; — идёт напоминание того, что сейчас наступает закат карьеры и то что после альбома «The Fall Off» он будет продаваться как Wrigley.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i&gt;reference:&lt;/i&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Wrigley_Company&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Wrigley&lt;/i&gt;&lt;/a&gt; — это крупная американская компания, которая выпускала жвачки, но в 2008 году её купил бренд «Mars» за 23 млрд. $.&lt;/p&gt;
 &lt;hr /&gt;
@@ -716,28 +716,28 @@ Me, I was startin&apos; to envy, wanna be on the top where it&apos;s plenty»&lt
 &lt;pre&gt;
 &lt;i&gt;«My life is all I have
 My rhymes, my pen, my pad
-And I done made it out the struggle, don&apos;t judge me
-What you sayin&apos; now won&apos;t budge me
-&apos;Cause where I come from (Come from), so often (So often)
-People you grow up with layin&apos; in a coffin
+And I done made it out the struggle, don't judge me
+What you sayin' now won't budge me
+'Cause where I come from (Come from), so often (So often)
+People you grow up with layin' in a coffin
 But I done made it through the pain and strife
-It&apos;s my time now, my world, my life, my life»&lt;/i&gt;
+It's my time now, my world, my life, my life»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Этот крутейший сэмпл был взят у &lt;a href=&quot;https://youtu.be/pfblnrUjysI?t=23&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Styles, Pharoahe Monch — The Life»&lt;/i&gt;&lt;/a&gt;, но добавляя туда бит и голос Morray он стал звучать совсем по-новому. Думаю, что эти строчки не нуждаются в объяснении и они говорят всё сами за себя.&lt;/p&gt;
 
 &lt;p&gt;Парт 21 Savage начинается с более грустных и личных строк:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Say what? The stuff that I&apos;ve seen got me traumatized
+&lt;i&gt;«Say what? The stuff that I've seen got me traumatized
 I let the K go when Johnny died
-Swangin&apos; that muhfucka&apos; side to side»&lt;/i&gt;
+Swangin' that muhfucka' side to side»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;В это он вкладывает случай, когда на своем 21-м дне рождении, в него шесть раз попали во время неудачной перестрелки, в результате которой погиб его лучший друг — Джонни. 21 Savage чуть не умер от кровопотери после того, как одна из пуль попала ему в шею. С тех пор тот случай изменил его жизнь и он никогда не забудет своих покойных друзей.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&lt;i&gt;«We don&apos;t participate, ain&apos;t with that squashin&apos; shit, all we believe in is homicide»&lt;/i&gt;&lt;/code&gt; — этими строчками 21 Savage хочет подчеркнуть то, что он не сочиняет дисс-песен о людях, с которыми у него личная неприязнь, вместо этого он просто убивает их. Звучит брутально, круто и пафосно, но, к сожалению, &apos;русскому человеку&apos; такого не прочувствовать.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&lt;i&gt;«We don't participate, ain't with that squashin' shit, all we believe in is homicide»&lt;/i&gt;&lt;/code&gt; — этими строчками 21 Savage хочет подчеркнуть то, что он не сочиняет дисс-песен о людях, с которыми у него личная неприязнь, вместо этого он просто убивает их. Звучит брутально, круто и пафосно, но, к сожалению, 'русскому человеку' такого не прочувствовать.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&lt;i&gt;«I pray that my past ain&apos;t ahead of me (21)»&lt;/i&gt;&lt;/code&gt; — опять-таки, до того как прийти в рэп, как многие молодые люди, он занимался уличными делами, что может сказаться на его настоящем.&lt;/p&gt; 
+&lt;p&gt;&lt;code&gt;&lt;i&gt;«I pray that my past ain't ahead of me (21)»&lt;/i&gt;&lt;/code&gt; — опять-таки, до того как прийти в рэп, как многие молодые люди, он занимался уличными делами, что может сказаться на его настоящем.&lt;/p&gt; 
 
 &lt;p&gt;Следующими строчками 21 Savage напоминает нам о том случае, который произошёл с ним и многие другие ситуации, когда он терял друзей:&lt;/p&gt;
 &lt;pre&gt;
@@ -748,9 +748,9 @@ Just know that they secrets is kept with me (On God)»&lt;/i&gt;
 
 &lt;p&gt;Примечательные строчки:&lt;/p&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«What I see in the sky, the &apos;Ville is the ceilin&apos;, can&apos;t reach up too high, evidently»&lt;/i&gt;&lt;/code&gt; — тут J. Cole просто превозносит своё объединение.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Wanna be in the spot like where every bitch want me like Rihanna droppin&apos; new Fenty»&lt;/i&gt;&lt;/code&gt; — &lt;a href=&quot;https://en.wikipedia.org/wiki/Fenty_Beauty&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Fenty Beaty&lt;/i&gt;&lt;/a&gt; — это косметический бренд, основанный исполнительницей Rihanna и LVMH.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I see chicken, you niggas is breast to me»&lt;/i&gt;&lt;/code&gt; — это очень классный панч от 21 Savage. Тут он сравнивает ребят с района с куриными грудками — d&apos;fuq??? Скорее всего он имеет ввиду, что обозвать человека курицей это уже само по себе оскорбление, а куриная грудка является самой нежной и мягкой частью, что может означать, что они ууух прям трусы-трусы.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«What I see in the sky, the 'Ville is the ceilin', can't reach up too high, evidently»&lt;/i&gt;&lt;/code&gt; — тут J. Cole просто превозносит своё объединение.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Wanna be in the spot like where every bitch want me like Rihanna droppin' new Fenty»&lt;/i&gt;&lt;/code&gt; — &lt;a href=&quot;https://en.wikipedia.org/wiki/Fenty_Beauty&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Fenty Beaty&lt;/i&gt;&lt;/a&gt; — это косметический бренд, основанный исполнительницей Rihanna и LVMH.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I see chicken, you niggas is breast to me»&lt;/i&gt;&lt;/code&gt; — это очень классный панч от 21 Savage. Тут он сравнивает ребят с района с куриными грудками — d'fuq??? Скорее всего он имеет ввиду, что обозвать человека курицей это уже само по себе оскорбление, а куриная грудка является самой нежной и мягкой частью, что может означать, что они ууух прям трусы-трусы.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;В заключение этого трека можно сказать, что J. Cole и 21 Savage выступают противоположностями. Джермейн — это парень который всё время завидовал 21 Savage, потому что тот умел вертеться в жизни и занимался уличными делами, но также Cole понимал, что это грязные и кровавые деньги, поэтому не шёл по этому пути. И в частности из-за этого трек выглядит цельным, а с сэмплом и голосом Morray, эта композиция становиться, наверное, лучшей на всём альбоме.&lt;/p&gt;
@@ -759,73 +759,73 @@ Just know that they secrets is kept with me (On God)»&lt;/i&gt;
 &lt;h2&gt;&lt;a id=&quot;audio4&quot; href=&quot;#tracklist_&quot;&gt;J. Cole — a p p l y i n g . p r e s s u r e&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;u&gt;Produced by:&lt;/u&gt; J. Cole&lt;/p&gt;
 
-&lt;p&gt;В треке «a p p l y i n g . p r e s s u r e», J. Cole &apos;оказывает давление&apos; на рэперóв, которые выставляют напоказ богатство, которого у них нет и которые мягко говоря приукрашивают себя и своё положение в песнях. Можно назвать это дисс-наставление для всех тупых cap-рэперóв.&lt;/p&gt;
+&lt;p&gt;В треке «a p p l y i n g . p r e s s u r e», J. Cole 'оказывает давление' на рэперóв, которые выставляют напоказ богатство, которого у них нет и которые мягко говоря приукрашивают себя и своё положение в песнях. Можно назвать это дисс-наставление для всех тупых cap-рэперóв.&lt;/p&gt;
 
 &lt;p&gt;На куплете можно услышать следующие строчки:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«Verses hit hard, never pitched hard or played the streets
-These niggas&apos; whips hard, behind closed doors, can&apos;t pay the lease (Uh)
-Ain&apos;t nothin&apos; wrong with livin&apos; check to check &apos;cause most have to (I understand that)
-Instead of cappin&apos;, why don’t you talk about being a broke rapper? (I don’t understand that)
-That&apos;s a perspective I respect because it’s real
-What it&apos;s like to be nice as fuck but got to stress to pay the bills»&lt;/i&gt;
+These niggas' whips hard, behind closed doors, can't pay the lease (Uh)
+Ain't nothin' wrong with livin' check to check 'cause most have to (I understand that)
+Instead of cappin', why don’t you talk about being a broke rapper? (I don’t understand that)
+That's a perspective I respect because it’s real
+What it's like to be nice as fuck but got to stress to pay the bills»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;В начале он говорит, что не увлекался уличными делами и это было подробно рассказано ещё на альбоме «2014 Forest Hills Drive».&lt;br /&gt;
-Далее Cole утверждает, что ничего страшного если вы &lt;sup&gt;тупые cap-рэперы&lt;/sup&gt; живёте от зарплаты до зарплаты, потому что многие люди так живут. Джермейн не скрывая говорит о своей неприязни к ним — &lt;code&gt;&lt;i&gt;«Вместо того, чтобы cap&apos;ать &lt;sup&gt;говорить неправду или преувеличивать&lt;/sup&gt; может скажите, что вы бедные рэперы?»&lt;/i&gt;&lt;/code&gt;. Джермейн пытается до нас донести то, что незачем врать людям, потому что их привлекает честность и открытость. &lt;code&gt;&lt;i&gt;«В чём прикол быть паинькой на публике, а потом переживать об оплате счетов?»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
+Далее Cole утверждает, что ничего страшного если вы &lt;sup&gt;тупые cap-рэперы&lt;/sup&gt; живёте от зарплаты до зарплаты, потому что многие люди так живут. Джермейн не скрывая говорит о своей неприязни к ним — &lt;code&gt;&lt;i&gt;«Вместо того, чтобы cap'ать &lt;sup&gt;говорить неправду или преувеличивать&lt;/sup&gt; может скажите, что вы бедные рэперы?»&lt;/i&gt;&lt;/code&gt;. Джермейн пытается до нас донести то, что незачем врать людям, потому что их привлекает честность и открытость. &lt;code&gt;&lt;i&gt;«В чём прикол быть паинькой на публике, а потом переживать об оплате счетов?»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;В этой части композиции он выступает в роли того, кто &apos;оказывает давление&apos;, но дальше роли меняются и он уже выступает в роли того на кого &apos;оказывают давление&apos;, рассказывая о своём жизненном опыте. Мы можем заметить следующие строчки:&lt;/p&gt;
+&lt;p&gt;В этой части композиции он выступает в роли того, кто 'оказывает давление', но дальше роли меняются и он уже выступает в роли того на кого 'оказывают давление', рассказывая о своём жизненном опыте. Мы можем заметить следующие строчки:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«That was me in &apos;08, seein&apos; no cake
+&lt;i&gt;«That was me in '08, seein' no cake
 Not even on dates I celebrated my birth
 Just did the mental math and calculated my worth»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Далее он признаётся, что иногда становился жертвой чувства ревности. Однако Джермейн смог взять под контроль те эмоции, которые заставили его сосредоточиться на собственном росте, что в конечном итоге привело его к успеху и богатству:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«I can cap and say that I never scratched my jealousy&apos;s itch
-But thank God I conquered that &apos;cause if not I&apos;d never be rich
+&lt;i&gt;«I can cap and say that I never scratched my jealousy's itch
+But thank God I conquered that 'cause if not I'd never be rich
 Envy keep your pockets empty, so just focus on you
-If you broke and clownin&apos; a millionaire, the joke is on you
-Money ain&apos;t everything, I never say that (Never)
-But niggas throw stones knowin&apos; they sell they soul to get wherever they at (Come on, man)»&lt;/i&gt;
+If you broke and clownin' a millionaire, the joke is on you
+Money ain't everything, I never say that (Never)
+But niggas throw stones knowin' they sell they soul to get wherever they at (Come on, man)»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Также продолжается дисс-часть, в которой Cole подчеркивает зависть и лицемерие людей, которые выставляют напоказ дорогие вещи, но ненавидят настоящих миллионеров. Ещё он тут подмечает то, что уважает тех людей, которые пытаются стать лучше и тратят свою энергию в этом направлении, вместо того, чтобы бросать камни в других людей.&lt;/p&gt;
 
-&lt;p&gt;В аутро, J. Cole ещё раз подмечает разницу между &apos;real niggas&apos; и &apos;mothafuckin&apos; fraudulent niggas&apos;:&lt;/p&gt;
+&lt;p&gt;В аутро, J. Cole ещё раз подмечает разницу между 'real niggas' и 'mothafuckin' fraudulent niggas':&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«&apos;Cause niggas just try to act like you just not that motherfuckin&apos; nigga, like
-Like you just really don&apos;t do it how you do it
-Like niggas will really try to act like you don&apos;t do what you do
+&lt;i&gt;«'Cause niggas just try to act like you just not that motherfuckin' nigga, like
+Like you just really don't do it how you do it
+Like niggas will really try to act like you don't do what you do
 Nigga look you dead in your face
-And really act like you don&apos;t do it to the level that you do it
-That&apos;s why sometimes you gotta come through and just do it at the level that you do it in front of every nigga face
-So they know the difference between you, the real niggas, and the mothafuckin&apos; fraudulent niggas, man
-Don&apos;t never get it fucked up
-If a nigga can&apos;t do it like you do it sometimes you gotta do it in front of his fuckin&apos; face so he&apos;ll know forever»&lt;/i&gt;
+And really act like you don't do it to the level that you do it
+That's why sometimes you gotta come through and just do it at the level that you do it in front of every nigga face
+So they know the difference between you, the real niggas, and the mothafuckin' fraudulent niggas, man
+Don't never get it fucked up
+If a nigga can't do it like you do it sometimes you gotta do it in front of his fuckin' face so he'll know forever»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;В конце нас подхватывают слова &lt;a href=&quot;https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Мартина Лютера Кинга&lt;/i&gt;&lt;/a&gt;, которые Cole использует для того, чтобы дополнить аутро и сказать нам о проблеме, когда люди не могут или не хотят признать чужой труд:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«These are the same ones telling our people what we are and we aren&apos;t because we&apos;re just not working hard enough
-And that mentality is what we&apos;re up against today
+&lt;i&gt;«These are the same ones telling our people what we are and we aren't because we're just not working hard enough
+And that mentality is what we're up against today
 But this is good to know because this time, when we march on the Capitol
-You can go ahead and let &apos;em know long before we get there, we&apos;re coming to get that check)»&lt;/i&gt;
+You can go ahead and let 'em know long before we get there, we're coming to get that check)»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/aBwKnnZN52U&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;p&gt;Примечательные строчки:&lt;/p&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Shit crazy, didn’t know I got more M&apos;s than a real Slim Shady video (I&apos;m the real Shady)»&lt;/i&gt;&lt;/code&gt; — тут идёт отсылка на &lt;a href=&quot;https://youtu.be/eJO5HU_7_1w&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Slim Shady&lt;/i&gt;&lt;/a&gt; — альтер-эго &lt;a href=&quot;https://en.wikipedia.org/wiki/Eminem&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Eminem&lt;/i&gt;&lt;/a&gt;, которое дало ему путь на вершину славы. Здесь встречается игра слов, &lt;code&gt;&lt;i&gt;«M»&lt;/i&gt;&lt;/code&gt; — может означать как &apos;миллион&apos;, но может быть это &apos;Em&apos; то есть сокращенный псевдоним Eminem.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Shit crazy, didn’t know I got more M's than a real Slim Shady video (I'm the real Shady)»&lt;/i&gt;&lt;/code&gt; — тут идёт отсылка на &lt;a href=&quot;https://youtu.be/eJO5HU_7_1w&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Slim Shady&lt;/i&gt;&lt;/a&gt; — альтер-эго &lt;a href=&quot;https://en.wikipedia.org/wiki/Eminem&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Eminem&lt;/i&gt;&lt;/a&gt;, которое дало ему путь на вершину славы. Здесь встречается игра слов, &lt;code&gt;&lt;i&gt;«M»&lt;/i&gt;&lt;/code&gt; — может означать как 'миллион', но может быть это 'Em' то есть сокращенный псевдоним Eminem.&lt;/li&gt;
     &lt;li&gt;&lt;code&gt;&lt;i&gt;«Big Boss, less Rick Ross, more like a wavy Hideo Kojima, they tote steamers around the way we tippy-toe»&lt;/i&gt;&lt;/code&gt; — в этих строчках Cole называет себя &lt;code&gt;&lt;i&gt;«big boss»&lt;/i&gt;&lt;/code&gt; после того, как в предыдущей строчке осознаёт сколько у него миллионов. Он отсылается к хип-хоп исполнителю &lt;a href=&quot;https://en.wikipedia.org/wiki/Rick_Ross&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Rick Ross&lt;/i&gt;&lt;/a&gt; и также сравнивает себя с главным героем игры «Metal Gear Solid» — Солидом Снейком (a.k.a Big Boss), которую создал знаменитый геймдизайнер &lt;a href=&quot;https://en.wikipedia.org/wiki/Hideo_Kojima&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Hideo Kojima&lt;/i&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2&gt;&lt;a id=&quot;audio5&quot; href=&quot;#tracklist_&quot;&gt;J. Cole — p u n c h i n ‘ . t h e . c l o c k&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;u&gt;Produced by:&lt;/u&gt; J. Cole&lt;/p&gt;
 
-&lt;p&gt;Это самая короткая песня на этом альбоме и в ней Джермейн рассказывает о часах, которые он провёл, работая или &apos;пробивая часы&apos;.&lt;br /&gt;
+&lt;p&gt;Это самая короткая песня на этом альбоме и в ней Джермейн рассказывает о часах, которые он провёл, работая или 'пробивая часы'.&lt;br /&gt;
 По сути структуру трека можно описать как: интро ⟼ куплет ⟼ аутро; один большой long talk.&lt;/p&gt;
 
 &lt;p&gt;Интро представляет собой сэмпл интервью звезды NBA — &lt;a href=&quot;https://en.wikipedia.org/wiki/Damian_Lillard&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Damian Lillard&lt;/i&gt;&lt;/a&gt;, 11 августа 2020 года после игры, когда он набрал 61 очко.&lt;/p&gt;
@@ -834,7 +834,7 @@ You can go ahead and let &apos;em know long before we get there, we&apos;re comi
 
 &lt;p&gt;Dame известен под прозвищем «Dame Time» — имя, которое он получил, выдирая победы для своей команды на последних секундах матча.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/a-M3x-eZpV8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;p&gt;Название песни может является отсылкой к прозвищу Lillard’a и празднованием — &apos;указанием на часы&apos;.&lt;/p&gt;
+&lt;p&gt;Название песни может является отсылкой к прозвищу Lillard’a и празднованием — 'указанием на часы'.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9Oj176jKeeU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;p&gt;На куплете же мы слышим все те же разговоры об уличных делах и этот куплет он служит больше антипримером и показывает как точно не стоит делать. Там представлена вымышленная ситуация, но которую Cole видел много раз на улицах родной Северной Каролины.&lt;/p&gt;
@@ -842,7 +842,7 @@ You can go ahead and let &apos;em know long before we get there, we&apos;re comi
 &lt;i&gt;«Shit profound, we propagating more profanity
 Paid off collections from recollections of calamity (Oh shit, look, that nigga gonna shoot)
 The shit pop off, I learned to duck under the canopy (Oh shit, run, nigga, run)
-&apos;Til it cool off, they murked a nigga right in front of me
+'Til it cool off, they murked a nigga right in front of me
 Told him to come off his chain for tryna floss
 Died over a cross just like the start of Christianity
 When I was a boy, the teacher often reprimanded me (Jermaine)
@@ -851,9 +851,9 @@ I busted the trees, was barely strong enough to squeeze
 Bullets traveled through leaves, it probably killed somebody randomly
 Ran in the crib and played it off amongst the family
 Nightmare scenes, the police finally apprehended me
-Woke up screamin&apos;, seen a demon had his hand on me
+Woke up screamin', seen a demon had his hand on me
 Still sport the scar on my arm from where he branded me
-Like a Que Dog, my niggas burnin&apos; with the mute off
+Like a Que Dog, my niggas burnin' with the mute off
 Loud pack smoke through the cracks, I catch a contact»&lt;/i&gt;
 &lt;/pre&gt;
 
@@ -876,31 +876,31 @@ You know, it always come to light»&lt;/i&gt;
 &lt;h2&gt;&lt;a id=&quot;audio6&quot; href=&quot;#tracklist_&quot;&gt;J. Cole &amp;amp; Bas — 1 0 0 . m i l ’&lt;/a&gt;&lt;/h2&gt;
 &lt;u&gt;Produced by:&lt;/u&gt; J. Cole &amp;amp; T-Minus
 
-&lt;p&gt;В этой песне звучит один из самых лучших битов всего альбома &lt;sup&gt;по моему мнению&lt;/sup&gt;. Здесь Cole говорит о продолжении своего пути, совершенствования своего &apos;рэп-мастерства&apos;, в частности флоу и улучшения качества текстóв, независимо от того успеха, которого он уже достиг. Это можно подтвердить его словами из трека &lt;a href=&quot;https://youtu.be/wvFDXV0VBg4?t=207&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole — False Prophets»&lt;/i&gt;&lt;/a&gt;: &lt;code&gt;&lt;i&gt;«I hear my old shit and know I can top it.»&lt;/i&gt;&lt;/code&gt;. Также Джермейн затронул идею достижения своего пика в документальном фильме 2021 года для этого альбома под названием &lt;a href=&quot;https://youtu.be/135bv6GhD2M&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole — Applying Pressure: The Off-Season Documentary»&lt;/i&gt;&lt;/a&gt;: &lt;code&gt;&lt;i&gt;«If this is as high as you ever got … from a skill level, like, have you wrote your best song? Did you leave no stone unturned, creatively? And when I thought about that feeling, I was like, ‘Nah, I’m not cool with that.‘»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;В этой песне звучит один из самых лучших битов всего альбома &lt;sup&gt;по моему мнению&lt;/sup&gt;. Здесь Cole говорит о продолжении своего пути, совершенствования своего 'рэп-мастерства', в частности флоу и улучшения качества текстóв, независимо от того успеха, которого он уже достиг. Это можно подтвердить его словами из трека &lt;a href=&quot;https://youtu.be/wvFDXV0VBg4?t=207&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole — False Prophets»&lt;/i&gt;&lt;/a&gt;: &lt;code&gt;&lt;i&gt;«I hear my old shit and know I can top it.»&lt;/i&gt;&lt;/code&gt;. Также Джермейн затронул идею достижения своего пика в документальном фильме 2021 года для этого альбома под названием &lt;a href=&quot;https://youtu.be/135bv6GhD2M&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole — Applying Pressure: The Off-Season Documentary»&lt;/i&gt;&lt;/a&gt;: &lt;code&gt;&lt;i&gt;«If this is as high as you ever got … from a skill level, like, have you wrote your best song? Did you leave no stone unturned, creatively? And when I thought about that feeling, I was like, ‘Nah, I’m not cool with that.‘»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;С самого начала этой песни мы слышим разрывные строчки, которые идеально вплетаются в альбом и отсылают нас к песне &lt;a href=&quot;#audio4&quot;&gt;&lt;i&gt;«a p p l y i n g . p r e s s u r e»&lt;/i&gt;&lt;/a&gt;:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«How come a nigga ain&apos;t enter his prime?
-Still gettin&apos; better after all this time
-These niggas say that they killers, they lyin&apos;
-Only thing I see &apos;em killin&apos; is time»&lt;/i&gt;
+&lt;i&gt;«How come a nigga ain't enter his prime?
+Still gettin' better after all this time
+These niggas say that they killers, they lyin'
+Only thing I see 'em killin' is time»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Это определённо идёт в копилочку лучших панчей альбома: &lt;code&gt;&lt;i&gt;«Эти ниггеры говорят, что они убийцы, они лгут. Единственное, что они могут убить, это время.»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Далее идёт опять-таки &apos;демонстрация мускул&apos; и хасл:&lt;/p&gt;
+&lt;p&gt;Далее идёт опять-таки 'демонстрация мускул' и хасл:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«I&apos;m bleeding from fighting my demons head up
+&lt;i&gt;«I'm bleeding from fighting my demons head up
 When I get defeated, believe I get up
-I come from a city most niggas ain&apos;t heard of until they popped in my first CD, now look
-I&apos;m on that Mount Rushmore, you niggas can&apos;t front no more»&lt;/i&gt;
+I come from a city most niggas ain't heard of until they popped in my first CD, now look
+I'm on that Mount Rushmore, you niggas can't front no more»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;В конце первого куплета Джермейн говорит о том, что деньги меняют людей и то что он уверен в своих парнях, йоооу:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«I&apos;m proud of my niggas, they never switched up
-Don&apos;t care if it&apos;s Michael B. Jordan that&apos;s calling my woman to fuck, she ain&apos;t gon&apos; never pick up
-Sadly, I can&apos;t say the same for you niggas
+&lt;i&gt;«I'm proud of my niggas, they never switched up
+Don't care if it's Michael B. Jordan that's calling my woman to fuck, she ain't gon' never pick up
+Sadly, I can't say the same for you niggas
 A couple of dollars be changing you niggas
 I pray for you niggas, but»&lt;/i&gt;
 &lt;/pre&gt;
@@ -912,10 +912,10 @@ I pray for you niggas, but»&lt;/i&gt;
 
 &lt;p&gt;Второй куплет выглядит так:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«It&apos;s not &apos;bout the money, it&apos;s more about time
+&lt;i&gt;«It's not 'bout the money, it's more about time
 Shit makes sense when you see how I spend mine
-Burst through the ceiling, I&apos;m feeling sublime
-Can&apos;t leave the game yet, I feel like LeBron»&lt;/i&gt;
+Burst through the ceiling, I'm feeling sublime
+Can't leave the game yet, I feel like LeBron»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Здесь Cole утверждает, что для него уже не важны деньги, а важна репутация и наследие. &lt;code&gt;&lt;i&gt;«Это дерьмо имеет смысл, если вы посмотрите, как я этим занимаюсь»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
@@ -928,23 +928,23 @@ Can&apos;t leave the game yet, I feel like LeBron»&lt;/i&gt;
 &lt;p&gt;В заключительном припеве слышен парт Bas’a, который ещё раз напоминает нам о том, что J. Cole на пике карьеры.&lt;/p&gt;
 
 &lt;pre&gt;
-&lt;i&gt;«Ooh, one hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still
-One hundred mil&apos; and I&apos;m still»&lt;/i&gt;
+&lt;i&gt;«Ooh, one hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still
+One hundred mil' and I'm still»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;При семизначной стоимости шоу он буквально заработал на своей музыке более 100 миллионов долларов, а его песни транслируются более чем на 2 миллиарда. &lt;code&gt;&lt;i&gt;«On the Grind»&lt;/i&gt;&lt;/code&gt; означает усердно работать над своей страстью. Джермейну больше нечего доказывать, но это не мешает ему продолжать работать и совершенствовать свое мастерство. Это означает, что Cole говорит не только о 100 миллионах в денежном выражении. Возможно, он имеет в виду количество времени, которое он тратит на совершенствование своего ремесла.&lt;/p&gt;
 
 &lt;p&gt;Примечательные строчки:&lt;/p&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«This game is likе follow the leader, if you looking closely enough, then you&apos;ll see that I led»&lt;/i&gt;&lt;/code&gt; — здесь Cole сравнивает рэп-игру с игрой, в которую играют дети в начальной школе — «следуй за лидером» — учитель выбирает одного ребёнка в роли ведущего, а остальные следуют за ним, это удобно, когда нужно выйти за пределы класса, допустим на обед или перерыв.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I&apos;ma reign until FEMA show up»&lt;/i&gt;&lt;/code&gt; — если переводить дословно, то тут говориться о том, что Джермейн будет господствовать пока за ним не приедет отдел FEMA — это федеральное агентство США по управлению в чрезвычайных ситуациях, целью которой является ликвидация последствий глобальных катастроф.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«This game is likе follow the leader, if you looking closely enough, then you'll see that I led»&lt;/i&gt;&lt;/code&gt; — здесь Cole сравнивает рэп-игру с игрой, в которую играют дети в начальной школе — «следуй за лидером» — учитель выбирает одного ребёнка в роли ведущего, а остальные следуют за ним, это удобно, когда нужно выйти за пределы класса, допустим на обед или перерыв.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I'ma reign until FEMA show up»&lt;/i&gt;&lt;/code&gt; — если переводить дословно, то тут говориться о том, что Джермейн будет господствовать пока за ним не приедет отдел FEMA — это федеральное агентство США по управлению в чрезвычайных ситуациях, целью которой является ликвидация последствий глобальных катастроф.&lt;/li&gt;
 &lt;/ol&gt;
 
 
@@ -952,13 +952,13 @@ One hundred mil&apos; and I&apos;m still»&lt;/i&gt;
 &lt;u&gt;Produced by:&lt;/u&gt; T-Minus
 &lt;p&gt;С этим треком случилась одна неприятность, которая выяснилась после дропа альбома. Она заключается в том, что этот бит уже использовался только с другим темпом &lt;sup&gt;BPM&lt;/sup&gt;, на композиции &lt;a href=&quot;https://youtu.be/_YtvtGTb3yg&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Aminé — Can’t Decide»&lt;/i&gt;&lt;/a&gt;. Обе этих песни объединяет то, что их спродюсировал T-Minus и так получилось, что видимо ему вспомнился мотив его предыдущей работы и он неосознанно повторил бит.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/vXlWKHTfZ8U&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;p&gt;Лично мне непривычно было слышать Lil Baby на фите с J. Cole, потому что это исполнители совсем разного калибра, но &apos;аура&apos; Джермейна даёт о себе знать, хотя бы немного. Парт Lil Baby мне понравился только в заключительной его части, всё остальное — это классический трек Lil Baby, хасл и всякое такое.&lt;/p&gt;
+&lt;p&gt;Лично мне непривычно было слышать Lil Baby на фите с J. Cole, потому что это исполнители совсем разного калибра, но 'аура' Джермейна даёт о себе знать, хотя бы немного. Парт Lil Baby мне понравился только в заключительной его части, всё остальное — это классический трек Lil Baby, хасл и всякое такое.&lt;/p&gt;
 &lt;p&gt;В этой композиции Cole обсуждает один из семи смертных грехов, гордыню, и то, как она влияет на поведение как его самого, так и других людей. Джермейн также ценит то, что он выжил на улицах и прожил много лет, в отличии от его некоторых знакомых. Lil Baby есть Lil Baby и читает он конечно же о своём богатстве, наркозависимости, которая у него когда-то была, и про ответственность перед людьми, с которыми он вырос.&lt;/p&gt;
 
 &lt;p&gt;На первом куплете мы можем слышать такие строчки:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«Still remember vividly the nigga that pulled a gun on me
-I&apos;m petrified, but moving like I got no sense of urgency»&lt;/i&gt;
+I'm petrified, but moving like I got no sense of urgency»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Здесь раскрывается тема гордости, когда она помешала ему повернуться лицом и убежать, что потенциально могло закончиться его убийством. Также хочется упомянуть другие строчки Джермейна на эту тему с трека &lt;a href=&quot;https://youtu.be/fX8IUhQqOOk&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole — 2Face»&lt;/i&gt;&lt;/a&gt;: &lt;code&gt;&lt;i&gt;«But still we never ran, foolish pride made us stand right there»&lt;/i&gt;&lt;/code&gt;. То есть: &lt;code&gt;&lt;i&gt;«Но всё же мы никогда не бежали, глупая гордость заставляла нас стоять прямо здесь»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
@@ -966,27 +966,27 @@ I&apos;m petrified, but moving like I got no sense of urgency»&lt;/i&gt;
 &lt;p&gt;Следующие строчки отсылают нас к тому, что Cole вырос в неполной семье и его родители разошлись когда он был ещё ребёнком.&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«Pride be the reason for the family dichotomy
-Got uncles and some aunties that&apos;s too proud to give apologies»&lt;/i&gt;
+Got uncles and some aunties that's too proud to give apologies»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Если переходить к парту Lil Baby, то я бы выделил следующие строчки:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«All my pride gone, had to lose it all then I got rich
 I own five homes, glad some of this shit starting to make sense
-I&apos;m staying hella focused and I can&apos;t forget the bigger picture
-I can&apos;t even hold you, I didn&apos;t have shit, I won&apos;t forget it
+I'm staying hella focused and I can't forget the bigger picture
+I can't even hold you, I didn't have shit, I won't forget it
 Will I be destroyed?
-Come to me with everything, it&apos;s starting to get annoying
-I&apos;m addicted to promethazine, it&apos;s crazy, yeah, I know it
+Come to me with everything, it's starting to get annoying
+I'm addicted to promethazine, it's crazy, yeah, I know it
 All this money coming in, it drive me crazy not to show it
-I&apos;ll be crazy if I blow it»&lt;/i&gt;
+I'll be crazy if I blow it»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Тут он говорит о том, что если его гордыня не ушла, то он бы не достиг успеха. Также тут раскрывается тема наркотиков и принятие зависимости. И заканчивает он свой парт так: &lt;code&gt;&lt;i&gt;«Все эти деньги приходят ко мне, меня сводит с ума, что я не могу показать их. Я стану безумным, если я их лишусь»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Примечательные строчки:&lt;/p&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Got my speed up, foot all on the gas, this not a C8 &apos;Vette»&lt;/i&gt;&lt;/code&gt; — тут Lil Baby сравнивает себя с &lt;a href=&quot;https://en.wikipedia.org/wiki/Chevrolet_Corvette&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Chevrolet Corvette&lt;/i&gt;&lt;/a&gt;, что он также быстро набирает обороты и не собирается останавливаться.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Got my speed up, foot all on the gas, this not a C8 'Vette»&lt;/i&gt;&lt;/code&gt; — тут Lil Baby сравнивает себя с &lt;a href=&quot;https://en.wikipedia.org/wiki/Chevrolet_Corvette&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Chevrolet Corvette&lt;/i&gt;&lt;/a&gt;, что он также быстро набирает обороты и не собирается останавливаться.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;В остальном трек максимально прямолинейны и в песне напрямую всё сказано. Даже нет баскетбольных отсылочек. 😞&lt;/p&gt;
@@ -998,27 +998,27 @@ I&apos;ll be crazy if I blow it»&lt;/i&gt;
 
 &lt;p&gt;Ууух, я оттягивал этот момент как мог и мне не хотелось писать разбор на этот трек и даже его переслушивать. Для меня эта песня показалась одним большим расстройством, одна из самых слабых песен на альбоме. Просто когда видишь в названии пластинки J. Cole и 6LACK, то ожидаешь немного другого. Когда альбом только вышел и я посмотрел на треклист, то с нетерпением ждал этой композиции, но после прослушивания очень огорчился. Хотелось бы получить похожую крутую историю как была с &lt;a href=&quot;https://youtu.be/iSgUMPHQEWw&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«6LACK &amp;amp; J. Cole — Pretty Little Fears»&lt;/i&gt;&lt;/a&gt;, а в итоге какой-то смазанный бит с сафари мотивами и 6LACK просто на бэках припева в котором 4 строчки. Грустно.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/off-season/6lack.jpg&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Ладно, гоу. В этой композиции Cole анализирует свою жизнь и карьеру, подробно описывая некоторые сомнения, которые он испытывал на протяжении многих лет, и страхи, которые он испытывает сейчас как отец двух сыновей, растущих в мире, полном расизма и насилия. Название этой песни происходит с того момента, когда первенец Джермейна попросил его &apos;отпустить руку&apos;, чтобы он мог пройтись самостоятельно.&lt;/p&gt;
+&lt;p&gt;Ладно, гоу. В этой композиции Cole анализирует свою жизнь и карьеру, подробно описывая некоторые сомнения, которые он испытывал на протяжении многих лет, и страхи, которые он испытывает сейчас как отец двух сыновей, растущих в мире, полном расизма и насилия. Название этой песни происходит с того момента, когда первенец Джермейна попросил его 'отпустить руку', чтобы он мог пройтись самостоятельно.&lt;/p&gt;
 
 &lt;p&gt;Единственное, наверное, что я хотел бы отметить в этом треке — момент с историей, которую рассказывает нам Cole:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«Today my son said, &quot;Dad, let go my hand&quot;
-Reminded me one day he&apos;s gonna be his own man
-And my job is to make sure he&apos;s equipped
-I gotta make sure he not no bitch &apos;cause niggas bound to try him
-If I said I was the toughest growin&apos; up, I would be lyin&apos;
-I had a fear of gettin&apos; punched while everybody eyein&apos;
-Add to that a constant fear of dyin&apos;
+Reminded me one day he's gonna be his own man
+And my job is to make sure he's equipped
+I gotta make sure he not no bitch 'cause niggas bound to try him
+If I said I was the toughest growin' up, I would be lyin'
+I had a fear of gettin' punched while everybody eyein'
+Add to that a constant fear of dyin'
 By gunshot wound, the other violent type of endings
-I kept a tough demeanor on the surface but was mostly just pretendin&apos;
-Luckily my bluff was workin&apos; way more often than not
+I kept a tough demeanor on the surface but was mostly just pretendin'
+Luckily my bluff was workin' way more often than not
 But sometimes a nigga pulled my card, tryna expose me for a fraud
 And with my reputation at stake
-I was scufflin&apos; just to save face
+I was scufflin' just to save face
 Couple wins, couple losses, some broken up too quick to call it»&lt;/i&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Здесь Джермейн говорит, что его задача подготовить сына к взрослой жизни и всякое такое, чтобы он уже сам мог &apos;идти&apos;. Ну и дальше, в качестве небольшого флешбека, идёт отрывок из уже его взросления.&lt;/p&gt;
+&lt;p&gt;Здесь Джермейн говорит, что его задача подготовить сына к взрослой жизни и всякое такое, чтобы он уже сам мог 'идти'. Ну и дальше, в качестве небольшого флешбека, идёт отрывок из уже его взросления.&lt;/p&gt;
 
 &lt;p&gt;На этом я хотел бы закончить разбор этого трека, потому что тут по сути нечего разбирать, только одно расстройство.&lt;/p&gt;
 
@@ -1037,10 +1037,10 @@ Couple wins, couple losses, some broken up too quick to call it»&lt;/i&gt;
 &lt;p&gt;Трек начинается с интро, на котором можно слышать Томми Паркера, одного из продюсеров этой композиции. Здесь я хотел бы отметить следующие строчки, которые настраивают нас на дальнейшее повествование и говорят о том, какой длинный путь прошёл Cole:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«We came a long way, man, we done came a long way
-And we sittin&apos; on top of this shit
+And we sittin' on top of this shit
 This shit can go one of two ways
 This shit can go up, it can go down
-Either way, nigga, I&apos;m prepared
+Either way, nigga, I'm prepared
 Feel me? Yeah»&lt;/i&gt;
 &lt;/pre&gt;
 
@@ -1049,21 +1049,21 @@ Feel me? Yeah»&lt;/i&gt;
 &lt;p&gt;Куплет начинается так:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«This Southern heat make unbearable summers
-Just last week, seen yo&apos; mama weep
-Crying &apos;cause she don&apos;t wan&apos; bury your brother
+Just last week, seen yo' mama weep
+Crying 'cause she don't wan' bury your brother
 The blood lеaks while the EMTs
 Gotta carry her baby likе surrogate mothers»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Здесь есть выражение &lt;code&gt;&lt;i&gt;«southern heat»&lt;/i&gt;&lt;/code&gt;, которое можно перевести как &lt;code&gt;&lt;i&gt;«южная жара»&lt;/i&gt;&lt;/code&gt;, что можно интерпретировать как высокую температуру воздуха, но также это может означать вооружённое насилие в южных штатах Америки. В таких штатах, как Техас или Флорида, не только проходит самое теплое лето, но и наибольшее количество смертей в перестрелках по всей Америке. Также в продолжении темы про жару тут есть очень крутая игра слов, &lt;code&gt;&lt;i&gt;«weep»&lt;/i&gt;&lt;/code&gt; означает &lt;code&gt;&lt;i&gt;«потеть»&lt;/i&gt;&lt;/code&gt; или же второе значение этого слова &lt;code&gt;&lt;i&gt;«оплакивать»&lt;/i&gt;&lt;/code&gt;, то есть матери оплакивают своих умерших сыновей.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&lt;i&gt;«&apos;Cause TEC-9s like to air out rebuttals»&lt;/i&gt;&lt;/code&gt; — &lt;code&gt;&lt;i&gt;«TEC-9»&lt;/i&gt;&lt;/code&gt; — это полуавтоматический пистолет производства &lt;a href=&quot;https://en.wikipedia.org/wiki/Intratec&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Intratec&lt;/i&gt;&lt;/a&gt;. Из-за связи оружия с организованной преступностью в Соединенных Штатах, Intratec было запрещено производить &lt;a href=&quot;https://en.wikipedia.org/wiki/TEC-9&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;TEC-9&lt;/i&gt;&lt;/a&gt; Федеральным запретом на штурмовое оружие в период с 1994 по 2004 год. Коул размышляет о бессмысленной природе насилия с применением огнестрельного оружия, свидетелем которого он продолжает быть: от Северной Каролины до всей территории Соединенных Штатов. Услышав выстрелы, Cole обнаруживает, что TEC-9 — это ответ на разногласия.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&lt;i&gt;«'Cause TEC-9s like to air out rebuttals»&lt;/i&gt;&lt;/code&gt; — &lt;code&gt;&lt;i&gt;«TEC-9»&lt;/i&gt;&lt;/code&gt; — это полуавтоматический пистолет производства &lt;a href=&quot;https://en.wikipedia.org/wiki/Intratec&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Intratec&lt;/i&gt;&lt;/a&gt;. Из-за связи оружия с организованной преступностью в Соединенных Штатах, Intratec было запрещено производить &lt;a href=&quot;https://en.wikipedia.org/wiki/TEC-9&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;TEC-9&lt;/i&gt;&lt;/a&gt; Федеральным запретом на штурмовое оружие в период с 1994 по 2004 год. Коул размышляет о бессмысленной природе насилия с применением огнестрельного оружия, свидетелем которого он продолжает быть: от Северной Каролины до всей территории Соединенных Штатов. Услышав выстрелы, Cole обнаруживает, что TEC-9 — это ответ на разногласия.&lt;/p&gt;
 
 &lt;p&gt;Далее можно услышать такие строчки:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Block hot, niggas burnin&apos; up the street
-Shots poppin&apos; and we heard it up the street
-It&apos;s a war, niggas runnin&apos; up the score
+&lt;i&gt;«Block hot, niggas burnin' up the street
+Shots poppin' and we heard it up the street
+It's a war, niggas runnin' up the score
 Jesus said that you should turn the other cheek»&lt;/i&gt;
 &lt;/pre&gt;
 
@@ -1072,20 +1072,20 @@ Jesus said that you should turn the other cheek»&lt;/i&gt;
 &lt;p&gt;Интро и аутро связаны и эта связь проходит по всей песне красной ниточкой:&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«I told you, I told you
-This shit can go up, it can go down, I don&apos;t give a fuck
+This shit can go up, it can go down, I don't give a fuck
 Nigga, I done seen the highest heights
 I done seen it twice
-And I&apos;ve seen the lowest of the lows
+And I've seen the lowest of the lows
 And still I rose
-Now I&apos;m at your neck, nigga, yeah»&lt;/i&gt;
+Now I'm at your neck, nigga, yeah»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Тут Джермейн говорит о том, что несмотря на тот успех которого он достиг, он не собирается останавливаться.&lt;/p&gt;
 
 &lt;p&gt;Примечательные строчки:&lt;/p&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Cole World, niggas knowin&apos; what it is»&lt;/i&gt;&lt;/code&gt; — это самые приятные строчка на треке, потому что это является отсылкой на его дебютный альбом — «J. Cole — Cole World: The Sideline Story».&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«My homie&apos; homie got out on parole; He sold more Coca-Cola than the soda industry»&lt;/i&gt;&lt;/code&gt; — в Америке &lt;a href=&quot;https://en.wikipedia.org/wiki/Coca-Cola&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Кока-Колу&lt;/i&gt;&lt;/a&gt; могут сокращённо называть &lt;code&gt;&lt;i&gt;«coke»&lt;/i&gt;&lt;/code&gt;, что также является сленговым названием для кокаина, ну а остальное в пояснение не нуждается.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«Cole World, niggas knowin' what it is»&lt;/i&gt;&lt;/code&gt; — это самые приятные строчка на треке, потому что это является отсылкой на его дебютный альбом — «J. Cole — Cole World: The Sideline Story».&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«My homie' homie got out on parole; He sold more Coca-Cola than the soda industry»&lt;/i&gt;&lt;/code&gt; — в Америке &lt;a href=&quot;https://en.wikipedia.org/wiki/Coca-Cola&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Кока-Колу&lt;/i&gt;&lt;/a&gt; могут сокращённо называть &lt;code&gt;&lt;i&gt;«coke»&lt;/i&gt;&lt;/code&gt;, что также является сленговым названием для кокаина, ну а остальное в пояснение не нуждается.&lt;/li&gt;
     &lt;li&gt;&lt;code&gt;&lt;i&gt;«Christ went to Heaven age thirty-three and so did Pimp C and so did Nipsey»&lt;/i&gt;&lt;/code&gt; — по версии Библии Иисус умер в 33 года. J. Cole сравнивает этот факт с рэперами &lt;a href=&quot;https://en.wikipedia.org/wiki/Pimp_C&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Pimp C&lt;/i&gt;&lt;/a&gt; и &lt;a href=&quot;https://en.wikipedia.org/wiki/Nipsey_Hussle&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Nipsey Hussle&lt;/i&gt;&lt;/a&gt;, которые умерли в таком же возрасте. Pimp C умер от передозировки кодеином, а Нипси был застрелен в своём же магазине &lt;a href=&quot;https://www.themarathonclothing.com/&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Marathon Clothing&lt;/i&gt;&lt;/a&gt; в южном Лос-Анджелесе.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1105,7 +1105,7 @@ Now I&apos;m at your neck, nigga, yeah»&lt;/i&gt;
 
 &lt;p&gt;Сразу же хотелось подметить замечательное интро, которое открывает трек:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Are you doin&apos; this work to facilitate growth or to become famous?
+&lt;i&gt;«Are you doin' this work to facilitate growth or to become famous?
 Which is more important?
 Getting or letting go?
 You can do anything, anything you can do (You can do anything)
@@ -1121,7 +1121,7 @@ You can do anything, anything you can do (You can do anything)»&lt;/i&gt;
 &lt;i&gt;«Everything come back around full circle
 Why do lies sound pleasant, but the truth hurtful?
 Everybody gotta cry once in a while
-But how long will it take &apos;fore you smile?
+But how long will it take 'fore you smile?
 This is that come-back-to-life shit»&lt;/i&gt;
 &lt;/pre&gt;
 
@@ -1129,10 +1129,10 @@ This is that come-back-to-life shit»&lt;/i&gt;
 &lt;pre&gt;
 &lt;i&gt;«Turn up your decibels, peep how I decimate a joint
 Check out my projects like them workers that Section 8 appoints
-And you&apos;ll see how I flipped like exclamation points»&lt;/i&gt;
+And you'll see how I flipped like exclamation points»&lt;/i&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Также помимо отсылки, эти строчки являются игрой слов, потому что Cole немного изменил название альбома Кендрика с «Section.80» на &lt;code&gt;&lt;i&gt;«Section 8»&lt;/i&gt;&lt;/code&gt;, ссылаясь на программу оплаты аренды жилья в США, которая получила название &lt;a href=&quot;https://en.wikipedia.org/wiki/Section_8_(housing)&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Section 8 Housing»&lt;/i&gt;&lt;/a&gt;. Согласно этой программе, семьи с низким доходом, инвалиды и пожилые люди могут выбрать себе любое жильё из перечня доступных и оплатить лишь 30% его стоимости, 70% остаётся за государством. Ещё Джермейн упоминает здесь восклицательные знаки, что может быть отсылкой на Кендрика и его песню — &lt;a href=&quot;https://youtu.be/8aShfolR6w8&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Kendrick Lamar — i»&lt;/i&gt;&lt;/a&gt;, так как восклицательный знак является перевёрнутой буквой &apos;i&apos;.&lt;/p&gt;
+&lt;p&gt;Также помимо отсылки, эти строчки являются игрой слов, потому что Cole немного изменил название альбома Кендрика с «Section.80» на &lt;code&gt;&lt;i&gt;«Section 8»&lt;/i&gt;&lt;/code&gt;, ссылаясь на программу оплаты аренды жилья в США, которая получила название &lt;a href=&quot;https://en.wikipedia.org/wiki/Section_8_(housing)&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Section 8 Housing»&lt;/i&gt;&lt;/a&gt;. Согласно этой программе, семьи с низким доходом, инвалиды и пожилые люди могут выбрать себе любое жильё из перечня доступных и оплатить лишь 30% его стоимости, 70% остаётся за государством. Ещё Джермейн упоминает здесь восклицательные знаки, что может быть отсылкой на Кендрика и его песню — &lt;a href=&quot;https://youtu.be/8aShfolR6w8&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«Kendrick Lamar — i»&lt;/i&gt;&lt;/a&gt;, так как восклицательный знак является перевёрнутой буквой 'i'.&lt;/p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/assets/off-season/kendrick.jpg&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Спустя некоторое количество треков мы наконец-таки возвращаемся к теме баскетбольных отсылок и в этой композиции она такая:&lt;/p&gt;
@@ -1141,7 +1141,7 @@ And you&apos;ll see how I flipped like exclamation points»&lt;/i&gt;
 Enough straps to fill four U-Hauls»&lt;/i&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Здесь идёт отсылка на позиция разыгрывающего или &lt;code&gt;&lt;i&gt;«point guard»&lt;/i&gt;&lt;/code&gt;, задача которого заключается в том, чтобы выполнять роль ball-handler’а и организовывать атаки. Позиция атакующего защитника, обычно известная как &lt;code&gt;&lt;i&gt;«two guards»&lt;/i&gt;&lt;/code&gt;, главная задача которого является получить передачу от point guard&apos;а и быстро атаковать кольцо противника.&lt;/p&gt;
+&lt;p&gt;Здесь идёт отсылка на позиция разыгрывающего или &lt;code&gt;&lt;i&gt;«point guard»&lt;/i&gt;&lt;/code&gt;, задача которого заключается в том, чтобы выполнять роль ball-handler’а и организовывать атаки. Позиция атакующего защитника, обычно известная как &lt;code&gt;&lt;i&gt;«two guards»&lt;/i&gt;&lt;/code&gt;, главная задача которого является получить передачу от point guard'а и быстро атаковать кольцо противника.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i&gt;reference:&lt;/i&gt; &lt;i&gt;shoot&lt;/i&gt; — означает не только выстрел, но и бросок в баскетболе.&lt;/p&gt;
 &lt;hr /&gt;
@@ -1156,24 +1156,24 @@ Enough straps to fill four U-Hauls»&lt;/i&gt;
 &lt;pre&gt;
 &lt;i&gt;«More death than World War II caused
 Around these parts we pour the brown just to drown these thoughts
-Of black corpses in county morgues, Lord, those images hauntin&apos;
-I ain&apos;t been asleep yet, it&apos;s ten in the mornin&apos;»&lt;/i&gt;
+Of black corpses in county morgues, Lord, those images hauntin'
+I ain't been asleep yet, it's ten in the mornin'»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Джермейн подробно описывает суровые реалии жизни в Америке, как часто случаются смерть и трагедии. Согласно полицейской процедуре, тот факт, что эти тела помещены в морги, свидетельствует о том, что они не умерли естественной смертью и находятся у судебно-медицинского эксперта для вскрытия. Чтобы подчеркнуть ужасы насилия с применением огнестрельного оружия в Америке, Cole сравнивает количество смертей, связанных с огнестрельным оружием, с общим количеством смертей в США во время Второй мировой войны. В 2017 году 39 773 человека погибли из-за огнестрельных ранений, в то время как во время Второй мировой войны общее число погибших в США составило 418 500 человек. Хотя Вторая мировая война была самым смертоносным военным конфликтом в истории, в результате которого, по оценкам, погибло более 70 миллионов человек — 3% населения мира в 1940 году, США понесли меньше потерь по сравнению с другими странами из-за местоположения войны и ее позднего вступления.&lt;/p&gt;
 
 &lt;p&gt;На самом деле тут можно разобрать ооочень много строк на отсылки. Эта композиция с очень мощной текстовой составляющей.&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«I&apos;m sendin&apos; a warnin&apos;, a problem with me is like the BET Hip-Hop Awards
-I&apos;m startin&apos; to see you niggas don&apos;t want it»&lt;/i&gt;
+&lt;i&gt;«I'm sendin' a warnin', a problem with me is like the BET Hip-Hop Awards
+I'm startin' to see you niggas don't want it»&lt;/i&gt;
 &lt;/pre&gt;
 &lt;p&gt;J. Cole обыгрывает тот факт, что крупные артисты после победы на церемониях &lt;a href=&quot;https://en.wikipedia.org/wiki/BET_Hip_Hop_Awards&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;BET Hip-Hop Awards&lt;/i&gt;&lt;/a&gt; не приезжают туда за своими наградами, постоянно говоря, что у них какие-то важные дела. Они используют эти церемонии лишь для того, чтобы похайпить, их волнует только прибыль. Джермейн считает, что люди знакомятся с ним и сотрудничают лишь для того, чтобы получить какую-либо выгоду.&lt;/p&gt;
 &lt;pre&gt;
 &lt;i&gt;«Well, you know what Cole do
-Make a diamond, they just rhymin&apos;, me, I&apos;m quotin&apos; gold»&lt;/i&gt;
+Make a diamond, they just rhymin', me, I'm quotin' gold»&lt;/i&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Cole обыгрывает схожесть своего имени со словом &apos;coal&apos; – графит, из которого делают синтетические алмазы. Он продолжает сиять в любых обстоятельствах, даже если на него давит общественность. В 2017 году в треке &lt;a href=&quot;https://youtu.be/0mRqrR-L-g0?t=232&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole – Return Of Simba»&lt;/i&gt;&lt;/a&gt; он пошутил похожим образом: &lt;code&gt;&lt;i&gt;«Cole under pressure, what that make? Diamonds»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Cole обыгрывает схожесть своего имени со словом 'coal' – графит, из которого делают синтетические алмазы. Он продолжает сиять в любых обстоятельствах, даже если на него давит общественность. В 2017 году в треке &lt;a href=&quot;https://youtu.be/0mRqrR-L-g0?t=232&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;«J. Cole – Return Of Simba»&lt;/i&gt;&lt;/a&gt; он пошутил похожим образом: &lt;code&gt;&lt;i&gt;«Cole under pressure, what that make? Diamonds»&lt;/i&gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;i&gt;«One phone call get you canceled like a homophobe in this PC culture
@@ -1186,8 +1186,8 @@ Address me as the G.O.A.T. like they call Chief Keef Sosa»&lt;/i&gt;
 
 &lt;p&gt;Примечательные строчки:&lt;/p&gt;
 &lt;ol&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I&apos;m sick of this flauntin&apos;, from niggas I know for sure ain&apos;t got mo&apos; dough than Cole»&lt;/i&gt;&lt;/code&gt; — здесь идёт отсылка на композицию &lt;a href=&quot;#audio4&quot;&gt;&lt;i&gt;«a p p l y i n g . p r e s s u r e»&lt;/i&gt;&lt;/a&gt;.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;&lt;i&gt;«They fiend to clap as often as the Genius app misquotin&apos; me, uh»&lt;/i&gt;&lt;/code&gt; — J. Cole подразумевает, что анализ его текстóв с помощью аннотаций Genius часто бывает неточным.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«I'm sick of this flauntin', from niggas I know for sure ain't got mo' dough than Cole»&lt;/i&gt;&lt;/code&gt; — здесь идёт отсылка на композицию &lt;a href=&quot;#audio4&quot;&gt;&lt;i&gt;«a p p l y i n g . p r e s s u r e»&lt;/i&gt;&lt;/a&gt;.&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;&lt;i&gt;«They fiend to clap as often as the Genius app misquotin' me, uh»&lt;/i&gt;&lt;/code&gt; — J. Cole подразумевает, что анализ его текстóв с помощью аннотаций Genius часто бывает неточным.&lt;/li&gt;
 &lt;/ol&gt;
 
 
@@ -1198,7 +1198,7 @@ Address me as the G.O.A.T. like they call Chief Keef Sosa»&lt;/i&gt;
 
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;70%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Z5SHX4_w7Pc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
-&lt;p&gt;Опять-таким по структуре — это &apos;длинный разговор&apos;. На самом деле, как вы могли заметить и потом мы к этому ещё дойдём, в этом альбоме нет фансервиса и бэнгеров для тусовок, это личный разговор Джермейна со своим слушателем. В этом заключается разница между этим альбомом и альбомом 2018 года — «J. Cole — KOD». Хотя будем честны и на том альбоме были очень достойные композиции.&lt;/p&gt;
+&lt;p&gt;Опять-таким по структуре — это 'длинный разговор'. На самом деле, как вы могли заметить и потом мы к этому ещё дойдём, в этом альбоме нет фансервиса и бэнгеров для тусовок, это личный разговор Джермейна со своим слушателем. В этом заключается разница между этим альбомом и альбомом 2018 года — «J. Cole — KOD». Хотя будем честны и на том альбоме были очень достойные композиции.&lt;/p&gt;
 
 &lt;p&gt;По традиции начнём разбор с интро. Нас подхватывают такие строчки:&lt;/p&gt;
 &lt;pre&gt;
@@ -1210,13 +1210,13 @@ One-two, one, one-two, one
 One-two, one, one, listen»&lt;/i&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Cole отдаёт дань уважения легендарному нью-йоркскому рэперу &lt;a href=&quot;https://en.wikipedia.org/wiki/Nas&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Насу&lt;/i&gt;&lt;/a&gt;, которого сам Джермейн иногда называл своим &apos;отцом&apos;. В этой строчке он совмещает название своего лейбла «Dreamville» и успешного дебютного альбом Наса — «Nas — Illmatic», который в своё время кардинально изменил рэп и хип-хоп индустрию.&lt;/p&gt;
+&lt;p&gt;Cole отдаёт дань уважения легендарному нью-йоркскому рэперу &lt;a href=&quot;https://en.wikipedia.org/wiki/Nas&quot; target=&quot;blank_&quot;&gt;&lt;i&gt;Насу&lt;/i&gt;&lt;/a&gt;, которого сам Джермейн иногда называл своим 'отцом'. В этой строчке он совмещает название своего лейбла «Dreamville» и успешного дебютного альбом Наса — «Nas — Illmatic», который в своё время кардинально изменил рэп и хип-хоп индустрию.&lt;/p&gt;
 
 &lt;p&gt;Текст данной композиции достаточно прямолинейный и по сути — это одна большая история, о которой читает Cole.&lt;/p&gt;
 
 &lt;p&gt;Ну тут на куплете есть всё-таки одна забавная строчка:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Heart pumpin&apos; like Usain Bolt»&lt;/i&gt;
+&lt;i&gt;«Heart pumpin' like Usain Bolt»&lt;/i&gt;
 &lt;/pre&gt;
 &lt;p&gt;Если переводить это, то получается: &lt;code&gt;&lt;i&gt;«Сердце стучит быстро, словно бежит Усейн Болт»&lt;/i&gt;&lt;/code&gt;.&lt;br /&gt;
 А? а? а? Поняли? Поняли? Ну типо самый быстрый человек на Земле, все дела. Йоооу.&lt;/p&gt;
@@ -1229,55 +1229,55 @@ One-two, one, one, listen»&lt;/i&gt;
 
 &lt;p&gt;Итак, вот мы и дошли до последнего трека на этом альбоме. Наверное, всё-таки это самый душевная песня и моя самая часто прослушиваемая. В этой композиции очень хороший лирический бит, я бы даже сказал, что этот бит он с счастливой грустью, то есть вроде как конец, но ты понимаешь, что это было действительно хорошо и наступает какое-то умиротворение.&lt;/p&gt;
 
-&lt;p&gt;На протяжении всей это композиции Джермейн рассуждает как он останется тем же человеком, несмотря на свой успех. Также чувствуется лёгкая нотка грусти и ностальгии по тем временам, когда он жил в NC. Тема альбома — это пусть Cole&apos;а между двумя его домами Fayetteville, NC и Queens, NYC. Этот альбом начинался с трека &lt;a href=&quot;#audio1&quot;&gt;&lt;i&gt;«9 5. s o u t h»&lt;/i&gt;&lt;/a&gt;, что относится к движению в южном направлении по автомагистрали I-95, соединяющей их между штатами. Повествование заканчивается этой песней, отсылающей к Hillside Avenue, улице в Queens. Интересно, что Cole должен был ехать на север, чтобы добраться туда из NC. В итоге, получается некое противопоставление.&lt;/p&gt;
+&lt;p&gt;На протяжении всей это композиции Джермейн рассуждает как он останется тем же человеком, несмотря на свой успех. Также чувствуется лёгкая нотка грусти и ностальгии по тем временам, когда он жил в NC. Тема альбома — это пусть Cole'а между двумя его домами Fayetteville, NC и Queens, NYC. Этот альбом начинался с трека &lt;a href=&quot;#audio1&quot;&gt;&lt;i&gt;«9 5. s o u t h»&lt;/i&gt;&lt;/a&gt;, что относится к движению в южном направлении по автомагистрали I-95, соединяющей их между штатами. Повествование заканчивается этой песней, отсылающей к Hillside Avenue, улице в Queens. Интересно, что Cole должен был ехать на север, чтобы добраться туда из NC. В итоге, получается некое противопоставление.&lt;/p&gt;
 
 &lt;center&gt;&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/CPrEvYRjPV3/?utm_source=ig_embed&amp;amp;utm_campaign=loading&quot; data-instgrm-version=&quot;13&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:16px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/CPrEvYRjPV3/?utm_source=ig_embed&amp;amp;utm_campaign=loading&quot; style=&quot; background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;&quot; target=&quot;_blank&quot;&gt; &lt;div style=&quot; display: flex; flex-direction: row; align-items: center;&quot;&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: column; flex-grow: 1; justify-content: center;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 19% 0;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display:block; height:50px; margin:0 auto 12px; width:50px;&quot;&gt;&lt;svg width=&quot;50px&quot; height=&quot;50px&quot; viewBox=&quot;0 0 60 60&quot; version=&quot;1.1&quot; xmlns=&quot;https://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;https://www.w3.org/1999/xlink&quot;&gt;&lt;g stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;g transform=&quot;translate(-511.000000, -20.000000)&quot; fill=&quot;#000000&quot;&gt;&lt;g&gt;&lt;path d=&quot;M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div style=&quot;padding-top: 8px;&quot;&gt; &lt;div style=&quot; color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;&quot;&gt; View this post on Instagram&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;padding: 12.5% 0;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;&quot;&gt;&lt;div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: 8px;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;margin-left: auto;&quot;&gt; &lt;div style=&quot; width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);&quot;&gt;&lt;/div&gt; &lt;div style=&quot; width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;div style=&quot;display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;&quot;&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;&quot;&gt;&lt;/div&gt; &lt;div style=&quot; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;&lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;&lt;a href=&quot;https://www.instagram.com/p/CPrEvYRjPV3/?utm_source=ig_embed&amp;amp;utm_campaign=loading&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;&quot; target=&quot;_blank&quot;&gt;A post shared by Bas (@bas)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt; &lt;script async=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;&lt;/center&gt;
 
 &lt;p&gt;Это самый лучший припев на альбоме, может даже лучший припев в принципе, который я слышал у J. Cole:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Shit gon&apos; get hard, keep your head strong
-If I quit now, then I&apos;m dead wrong
-Fightin&apos; off this hunger for hours
-Big stepper, nigga, don&apos;t get stepped on
-The money might fade, but respect don&apos;t
-Still gon&apos; be me when success gone
-I don&apos;t speak the language of cowards
-I walk through the flame like I&apos;m Teflon»&lt;/i&gt;
+&lt;i&gt;«Shit gon' get hard, keep your head strong
+If I quit now, then I'm dead wrong
+Fightin' off this hunger for hours
+Big stepper, nigga, don't get stepped on
+The money might fade, but respect don't
+Still gon' be me when success gone
+I don't speak the language of cowards
+I walk through the flame like I'm Teflon»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;&lt;i&gt;«The money might fade, but respect don’t»&lt;/i&gt;&lt;/code&gt; — самый сильный bar на этом альбоме — 100%.&lt;/p&gt;
 
 &lt;p&gt;К этому ещё хочется добавить одну строчку:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«I sin, so I can&apos;t cast the next stone»&lt;/i&gt;
+&lt;i&gt;«I sin, so I can't cast the next stone»&lt;/i&gt;
 &lt;/pre&gt;
 &lt;p&gt;Эта строка ссылается на фразу «тот, кто без греха, бросит первый камень», она была найдена в «Священной Библии, официальная версия короля Якова (1611 г.)». Это означает, что только те, кто безупречны, имеют право выносить суждения о других, подразумевая, что никто не безупречен, Джермейн в том числе, и поэтому никто не имеет права выносить суждения о других.&lt;/p&gt;
 
 &lt;p&gt;И куда же без баскетбольных отсылок в последней песне альбома:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Niggas can&apos;t see me one-on-one, that&apos;s word to Kyla Pratt»&lt;/i&gt;
+&lt;i&gt;«Niggas can't see me one-on-one, that's word to Kyla Pratt»&lt;/i&gt;
 &lt;/pre&gt;
 &lt;p&gt;Игра один на один — это окончательное испытание, чтобы увидеть, кто лучше. Cole говорит, что никто не обыграет его один на один. «Один на один» — это также телешоу, в котором снялась актриса Кайла Пратт.&lt;/p&gt;
 
 &lt;p&gt;На аутро нас подхватывает Bas с не менее хорошими строчками:&lt;/p&gt;
 &lt;pre&gt;
-&lt;i&gt;«Can&apos;t be afraid of sunlight
+&lt;i&gt;«Can't be afraid of sunlight
 Spotlights when it glows
 All the pain you hold
 Makes you worth your weight in gold
-Can&apos;t be afraid of sunlight
+Can't be afraid of sunlight
 Spotlights when it glows
 All the pain you hold
 Makes you worth your weight in gold
 God has a plan for you
-And all you&apos;ve got to do is believe, believe, be—»&lt;/i&gt;
+And all you've got to do is believe, believe, be—»&lt;/i&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;Думаю, что эти слова не нуждаются в пояснении.&lt;/p&gt;
 
 &lt;h2&gt;Заключение&lt;/h2&gt;
-&lt;p&gt;Этот альбом готовился давно и вообще стоит сказать, что J. Cole относится к тем артистам у которых есть чёткое видение того, что они хотят донести людям и очень грамотно прорабатывают концепции релизов. Из-за этого его тексты приятно читать и разбирать, потому что они являются &apos;многослойными&apos;. Я опять-таки разобрал далеко не всё, потому что сам лох и мало что знаю, но просто написал, что смог найти и чтобы не было скучно читать.&lt;/p&gt;
-&lt;p&gt;Этот релиз является одним большим long talk’ом без фансервисов и тусовочных бэнгеров и если честно, то такой &apos;классический&apos; J. Cole мне нравится больше. Конечно, есть объективно слабые песни и средние, но всё-таки всё-таки, альбом получился хорошим. Правда не хватает фитов с более именитыми артистами, молодёжь — это хорошо, но не стоит забывать и про Jay-Z, Nas, Kendrick Lamar &lt;sup&gt;вот это я шутник&lt;/sup&gt; и многие другие, которые хорошо бы сюда вписались.&lt;/p&gt;
+&lt;p&gt;Этот альбом готовился давно и вообще стоит сказать, что J. Cole относится к тем артистам у которых есть чёткое видение того, что они хотят донести людям и очень грамотно прорабатывают концепции релизов. Из-за этого его тексты приятно читать и разбирать, потому что они являются 'многослойными'. Я опять-таки разобрал далеко не всё, потому что сам лох и мало что знаю, но просто написал, что смог найти и чтобы не было скучно читать.&lt;/p&gt;
+&lt;p&gt;Этот релиз является одним большим long talk’ом без фансервисов и тусовочных бэнгеров и если честно, то такой 'классический' J. Cole мне нравится больше. Конечно, есть объективно слабые песни и средние, но всё-таки всё-таки, альбом получился хорошим. Правда не хватает фитов с более именитыми артистами, молодёжь — это хорошо, но не стоит забывать и про Jay-Z, Nas, Kendrick Lamar &lt;sup&gt;вот это я шутник&lt;/sup&gt; и многие другие, которые хорошо бы сюда вписались.&lt;/p&gt;
 
 
 &lt;p&gt;Топ треков:&lt;/p&gt;
@@ -1288,7 +1288,7 @@ And all you&apos;ve got to do is believe, believe, be—»&lt;/i&gt;
 &lt;/ol&gt;
 &lt;p&gt;Лучший bar: &lt;code&gt;&lt;i&gt;«The money might fade, but respect don’t»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Лучший гостевой панч: &lt;code&gt;&lt;i&gt;«I see chicken, you niggas is breast to me»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Лучший баскетбольный панч: &lt;code&gt;&lt;i&gt;«Kill &apos;em on a song, walk up out the booth, do the Westbrook rock-a-baby»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Лучший баскетбольный панч: &lt;code&gt;&lt;i&gt;«Kill 'em on a song, walk up out the booth, do the Westbrook rock-a-baby»&lt;/i&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Оценка: 8,5/10&lt;/p&gt;
 &lt;hr /&gt;
@@ -1299,6 +1299,6 @@ And all you&apos;ve got to do is believe, believe, be—»&lt;/i&gt;
 
 
 &lt;hr /&gt;
-&lt;h2 align=&quot;center&quot;&gt;✌️ shit gon&apos; get hard, keep your head strong&lt;/h2&gt;
+&lt;h2 align=&quot;center&quot;&gt;✌️ shit gon' get hard, keep your head strong&lt;/h2&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe src=&quot;https://open.spotify.com/embed/album/4JAvwK4APPArjIsOdGoJXX&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; allow=&quot;encrypted-media&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><category term="rap" /><category term="ballin&apos;" /><summary type="html">Слушать «The Off-Season»: @jcole.lnk.to/OffSeason</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><category term="rap" /><category term="ballin'" /><summary type="html">Слушать «The Off-Season»: @jcole.lnk.to/OffSeason</summary></entry></feed>
