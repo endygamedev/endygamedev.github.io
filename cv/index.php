@@ -103,7 +103,7 @@
                     <h2>Certificates</h2>
                     <div class="working-field">
                         <ul class="working-info">
-                            <li class="link"><a href="./cv/certificate.pdf" target="blank_">Certificate of completion of additional education</a></li>
+                            <li class="link"><a href="./certificate.pdf" target="blank_">Certificate of completion of additional education</a></li>
                             <li>Computer Science Training Center</li>
                             <li>2019</li>
                         </ul>
