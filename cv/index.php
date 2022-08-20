@@ -122,6 +122,13 @@
                             <li>2022</li>
                         </ul>
                     </div>
+                    <div class="working-field">
+                        <ul class="working-info">
+                            <li class="link remote"><a href="https://stepik.org/cert/1614590">«C++ programming»</a></li>
+                            <li>Stepik</li>
+                            <li>2022</li>
+                        </ul>
+                    </div>
                 </section>
                 <section>
                     <h2>Skills</h2>
@@ -144,7 +151,7 @@
                     <table>
                         <tr>
                             <td class="bold">Backend:</td>
-                            <td>Python, C, Bash, PHP, Haskell, Rust, Java, C#</td>
+                            <td>Python, C, C++, Bash, PHP, Haskell, Rust, Java, C#</td>
                         </tr>
                         <tr>
                             <td class="bold">Frontend:</td>
