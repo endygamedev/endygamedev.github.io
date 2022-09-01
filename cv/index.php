@@ -125,6 +125,7 @@
                     <div class="working-field">
                         <ul class="working-info">
                             <li class="link remote"><a href="https://stepik.org/cert/1614590">«C++ programming»</a></li>
+                            <li class="link remote"><a href=" https://stepik.org/cert/1641058">«C++ programming (continued)»</a></li>
                             <li>Stepik</li>
                             <li>2022</li>
                         </ul>
