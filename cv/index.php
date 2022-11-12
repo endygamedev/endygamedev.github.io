@@ -74,6 +74,11 @@
                             <li>2019–present (4<sup>th</sup> year)</li>
                             <li>Bachelor of Applied Mathematics and Computer Science</li>
                         </ul>
+                        <ul class="working-info">
+                            <li class="personal-field"><span class="link remote"><a href="https://academy.yandex.com/dataschool/">Yandex School of Data Analysis</a></span></li>
+                            <li>2022–present (1<sup>st</sup> year)</li>
+                            <li>Big Data Infrastructure</li>
+                        </ul>
                     </div>
                 </section>
                 <section>
