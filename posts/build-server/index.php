@@ -118,21 +118,21 @@ A   www    your_public_IP_address     # `A` DNS record for `www`
 λ cd --
 λ git clone https://github.com/endygamedev/endygamedev.github.io.git
 </pre>
-    <p>Create the directory for <code>ebronnikov.xyz</code> <small>(if you are creating your own website, you should replace `ebronnikov.xyz` with your domain name)</small> as follows, using the <code>-p</code> flag to create any necessary parent directories:</p>
+    <p>Create the directory for <code>bronnikov.xyz</code> <small>(if you are creating your own website, you should replace `bronnikov.xyz` with your domain name)</small> as follows, using the <code>-p</code> flag to create any necessary parent directories:</p>
 <pre>
-λ sudo mkdir -p /var/www/ebronnikov.xyz/html
+λ sudo mkdir -p /var/www/bronnikov.xyz/html
 </pre>
     <p>Next, assign ownership of the directory with the <code>$USER</code> environment variable:</p>
 <pre>
-λ sudo chown -R $USER:$USER /var/www/ebronnikov.xyz/html
+λ sudo chown -R $USER:$USER /var/www/bronnikov.xyz/html
 </pre>
     <p>The permissions of your web roots should be correct if you haven’t modified your umask value, which sets default file permissions. To ensure that your permissions are correct and allow the owner to read, write, and execute the files while granting only read and execute permissions to groups and others, you can input the following command:</p>
 <pre>
-λ sudo chmod -R 755 /var/www/ebronnikov.xyz
+λ sudo chmod -R 755 /var/www/bronnikov.xyz
 </pre>
     <p>Next, copy all your website sources into <code>html</code> directory:</p>
 <pre>
-λ sudo cp -r ~/endygamedev.github.io/* /var/www/ebronnikov.xyz/html/
+λ sudo cp -r ~/endygamedev.github.io/* /var/www/bronnikov.xyz/html/
 </pre>
     <p>To avoid a possible hash bucket memory problem that can arise from adding additional server names, it is necessary to adjust a single value in the /etc/nginx/nginx.conf file. Open the file:</p>
 <pre>
@@ -163,10 +163,10 @@ server {
     # listen 80 default_server;
     # listen [::]:80 default_server;
     listen 80;
-    server_name ebronnikov.xyz www.ebronnikov.xyz;
+    server_name bronnikov.xyz www.bronnikov.xyz;
     ...
     # root /var/www/html;
-    root /var/www/ebronnikov.xyz/html;
+    root /var/www/bronnikov.xyz/html;
     ...
 }
 </pre>
@@ -174,7 +174,7 @@ server {
 <pre>
 λ sudo service nginx restart
 </pre>
-    <p>After that you can type: <code>http://ebronnikov.xyz</code> into your browser's address bar and get your webpage. <u>BUT</u> we ended up with an uncertified website, so we need to move on to the certification stage.</p>
+    <p>After that you can type: <code>http://bronnikov.xyz</code> into your browser's address bar and get your webpage. <u>BUT</u> we ended up with an uncertified website, so we need to move on to the certification stage.</p>
     <h3>Certification</h3>
     <p>We will use the utility <span class="link remote"><a href="https://github.com/certbot/certbot" target="blank_">Certbot</a></span>.</p>
     <p>Installing Certbot:</p>
@@ -183,10 +183,10 @@ server {
 </pre>
 <p>Setup certification:</p>
 <pre>
-λ sudo certbot --nginx -d ebronnikov.xyz -d www.ebronnikov.xyz
+λ sudo certbot --nginx -d bronnikov.xyz -d www.bronnikov.xyz
 λ sudo certbot renew --dry-run      # Only valid for 90 days
 </pre>
-    <p>After that, you can go to the website <code>ebronnikov.xyz</code> and everything should work correctly.</p>
+    <p>After that, you can go to the website <code>bronnikov.xyz</code> and everything should work correctly.</p>
     <h3>Conclusion</h3>
     <p>As a result, we got a working server on which you can store some files and host various websites, you could still install a database, but this is another time.</p>
     <h3>References</h3>

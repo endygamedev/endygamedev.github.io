@@ -25,7 +25,7 @@
                         <li><span class="personal-field">Phone:</span> Available on request</li>
                         <li><span class="personal-field">Telegram:</span> <span class="link remote"><a href="https://t.me/endygamedev">@endygamedev</a></span></li>
                         <li><span class="personal-field">Email:</span> <span class="link remote"><a href="mailto:bronnikov.40@mail.ru">bronnikov.40@mail.ru</a></span></li>
-                        <li><span class="personal-field">Website:</span> <span class="link remote"><a href="https://ebronnikov.xyz">ebronnikov.xyz</a></span></li>
+                        <li><span class="personal-field">Website:</span> <span class="link remote"><a href="https://bronnikov.xyz">bronnikov.xyz</a></span></li>
                         <li><span class="personal-field">Date of birth:</span> 2001-12-26</li>
                     </ul>
                 </section>
@@ -226,7 +226,7 @@
                 </section>
                 <section>
                     <h2>Projects</h2>
-                    <p>You can see all the projects on my webpage: <span class="remote link"><a href="https://projects.ebronnikov.xyz/">projects.ebronnikov.xyz</a></span>.</p>
+                    <p>You can see all the projects on my webpage: <span class="remote link"><a href="https://projects.bronnikov.xyz/">projects.bronnikov.xyz</a></span>.</p>
                     <div class="db">
                     <p>Five latest projects:</p>
                     <?php
