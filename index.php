@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="about">
-                    Software Engineer, student at Saint Petersburg State University of Economics. Writing software to improve the experience of writing software. Interested in C, Python, Bash and Linux.
+                    Software Engineer, student at Saint Petersburg State University of Economics. Writing software to improve the experience of writing software. Interested in C/C++, Python, Bash and Linux.
                 </div>
                 <ul class="external-links">
                     <li>
@@ -96,7 +96,7 @@
             </aside>
         </main>
         <footer>
-            <span>&copy; 2022 Egor Bronnikov</span>
+            <span>&copy; 2019-<?php echo date("Y"); ?> Egor Bronnikov</span>
         </footer>
     </body>
 </html>

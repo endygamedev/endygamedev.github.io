@@ -41,7 +41,7 @@
                     <p>
                         4<sup>th</sup> year student of St. Petersburg State University of Economics.
                         Since high school I have been developing various things. I tried myself in variant fields such as web development, mobile development, game development, software development and many others.
-                        I can work with different office packages. I know Python, C, Bash and other programming languages.
+                        I can work with different office packages. I know Python, C/C++, Bash and other programming languages.
                         I am interested in the development of projects with algorithmic overtones. I am also interested in low-level things. Knowledge in Linear algebra, Probability and Statistics, Numerical methods, Forecating methods, Game theory, Econometrics and Discrete mathematics.
                         I understand OSI model, TCP/UDP, IPv4, IPv6 network protocols and some other networking things.
                     </p>
